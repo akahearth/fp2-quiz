@@ -92,7 +92,7 @@ function subjectCards() {
 function homeView() {
   const a = aggregate(bank.questions, history), last = history.sessions[0];
   const mockCount = poolFor(bank, history, { mode: 'mock' }).length >= 60 ? 60 : 12;
-  return `${pageHead('毎日の学びを、合格につなげる', '少しずつ、確かな力に。', 'まずは一問。6分野の基礎を身につけて、苦手を得意に変えていきましょう。')}
+  return `${pageHead('毎日の学びを、合格につなげる', '一日、一問から。', 'まずは一問。6分野の基礎を身につけて、苦手を得意に変えていきましょう。')}
     ${active ? `<div class="bottom-panel resume"><div><h3>途中の${modeNames[active.mode]}があります</h3><p>${Object.keys(active.answers).length} / ${active.questions.length} 問を回答済み${active.mode === 'mock' ? ' · 制限時間は離席中も進みます' : ''}</p></div><button class="button primary" data-action="resume">続きから再開 ${icon('arrow')}</button></div>` : ''}
     ${metrics()}
     <div class="section-head"><h2>今日の学習をはじめる</h2><a href="#settings">出題条件を設定 ${icon('arrow')}</a></div>

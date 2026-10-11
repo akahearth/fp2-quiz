@@ -72,12 +72,6 @@ python -m http.server 8765 --bind 127.0.0.1
 
 ポートが使用中なら`8765`を`8768`などに変更し、ブラウザのURLも同じ番号にします。ポートやホスト名が変わると別の保存場所となるため、履歴の移行にはバックアップを使ってください。
 
-今回の検証環境ではCodex同梱のPythonを使用しました。通常のPythonが起動できない場合、このPCでは次でも起動できます。
-
-```powershell
-& 'C:\Users\ichih\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m http.server 8765 --bind 127.0.0.1
-```
-
 `index.html`をダブルクリックした`file://`起動では、外部JSON・JavaScriptモジュール・Service Workerを正常に利用できません。必ずHTTPサーバーかHTTPS公開URLを使用してください。ここで使うHTTPサーバーは静的ファイルを配るためだけの開発用で、バックエンドの実装ではありません。
 
 ### VS Codeで開発する

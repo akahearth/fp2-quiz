@@ -1,5 +1,6 @@
-import { VERSION, STORAGE_KEY, validateBank, emptyHistory, loadState, saveState, exportBackup, importBackup, poolFor, aggregate, createSession, submitAnswer, nextQuestion, finishSession, expired } from './core.js';
+import { VERSION, validateBank, emptyHistory, loadState, saveState, exportBackup, importBackup, poolFor, aggregate, createSession, submitAnswer, nextQuestion, finishSession, expired } from './core.js';
 import { createMemo } from './memo.js';
+import { GRADES, GRADE_PREFERENCE_KEY, gradeConfig, readGrade } from './grades.js';
 
 const main = document.querySelector('#main');
 const notice = document.querySelector('#notice');
@@ -55,6 +56,8 @@ const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;
 const percent = n => n === null ? '未学習' : `${Math.round(n)}%`;
 const dateLabel = date => new Date(date).toLocaleString('ja-JP', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 let bank, history = emptyHistory(), active = null, resultSession = null, settings = { mode: 'random', count: 10, fieldIds: [], unitId: '' };
+let grade = '2', banks = {};
+const unsavedGrades = new Map();
 let storage, protectedStorage = false, storageFailed = false, waitingWorker = null, conflictingTab = false;
 
 function showNotice(message, error = false) {
@@ -64,8 +67,8 @@ function showNotice(message, error = false) {
 }
 function persist() {
   if (protectedStorage || conflictingTab) return false;
-  try { saveState(storage, history, active); storageFailed = false; return true; }
-  catch { storageFailed = true; showNotice('履歴を端末に保存できません。今回の学習は画面を閉じると失われる可能性があります。「データ・設定」でバックアップを保存してください。', true); return false; }
+  try { saveState(storage, history, active, grade); unsavedGrades.delete(grade); storageFailed = false; return true; }
+  catch { unsavedGrades.set(grade,{history,active}); storageFailed = true; showNotice('履歴を端末に保存できません。今回の学習は画面を閉じると失われる可能性があります。「データ・設定」でバックアップを保存してください。', true); return false; }
 }
 function canMutate() {
   if (conflictingTab) { showNotice('別のタブで履歴が更新されました。記録の上書きを防ぐため、この画面を再読み込みしてください。', true); return false; }
@@ -96,7 +99,7 @@ function homeView() {
     <div class="action-grid"><article class="action-card green"><span class="badge">6分野からランダムに</span><span class="action-symbol">${icon('book')}</span><h2>まずは、10問から。</h2><p>問題ごとの解説で、知識をひとつずつ確かめる。</p><button class="button light" data-action="random">ランダム演習をはじめる ${icon('arrow')}</button></article>
     <article class="action-card warm"><span class="small muted">復習待ち ${a.pending} 問</span><span class="action-symbol">${icon('repeat')}</span><h2>間違いが、学びになる。</h2><p>${a.pending ? '復習で2回連続正解して、苦手を克服しよう。' : '間違えた問題がここに集まります。'}</p><button class="button warm-button" data-action="review" ${a.pending ? '' : 'disabled'}>間違い直しをはじめる ${icon('arrow')}</button></article></div>
     <div class="section-head"><h2>6分野の学習状況</h2><a href="#stats">成績を詳しく見る ${icon('arrow')}</a></div><div class="subject-grid">${subjectCards()}</div>
-    <div class="bottom-panel"><div><h3>本番を意識した、${mockCount === 60 ? '60問模試' : 'お試し模試'}</h3><p>全${mockCount}問・${mockCount * 2}分。解説は試験終了後にまとめて確認。</p></div><button class="button secondary" data-action="mock">模試を設定 ${icon('arrow')}</button></div>
+    <div class="bottom-panel"><div><h3>本番を意識した、${mockCount === 60 ? '60問模試' : 'お試し模試'}</h3><p>全${mockCount}問・${mockCount * gradeConfig(grade).minutesPerQuestion}分。解説は試験終了後にまとめて確認。</p></div><button class="button secondary" data-action="mock">模試を設定 ${icon('arrow')}</button></div>
     ${last ? `<div class="bottom-panel"><div><h3>直近の演習 · ${modeNames[last.mode]}</h3><p>${dateLabel(last.endedAt)} · ${last.answered} 問回答 / ${last.correct} 問正解${last.answered < last.total ? ` / 未回答 ${last.total - last.answered} 問` : ''}</p></div><strong>${last.answered ? Math.round(last.correct / last.answered * 100) + '%' : '回答なし'}</strong></div>` : ''}`;
 }
 function settingsView() {
@@ -107,9 +110,9 @@ function settingsView() {
   ${settings.mode === 'field' ? `<fieldset><legend>02　分野を選ぶ（複数選択可）</legend><div class="fields-grid">${bank.fields.map(f => `<label class="field-option"><input type="checkbox" name="fields" value="${esc(f.id)}" ${settings.fieldIds.includes(f.id) ? 'checked' : ''}>${esc(f.name)}</label>`).join('')}</div></fieldset>` : ''}
   ${settings.mode === 'unit' ? `<fieldset><legend>02　小単元を選ぶ</legend><label for="unit-select" class="small muted">分野 / 小単元</label><select id="unit-select" name="unit">${bank.fields.map(f => `<optgroup label="${esc(f.name)}">${f.units.map(u => `<option value="${esc(u.id)}" ${u.id === settings.unitId ? 'selected' : ''}>${esc(u.name)}</option>`).join('')}</optgroup>`).join('')}</select></fieldset>` : ''}
   <fieldset><legend>${['field', 'unit'].includes(settings.mode) ? '03' : '02'}　${mock ? '模試の種類' : '出題数'}</legend>
-  ${mock ? `<div class="counts"><label class="count-option"><input type="radio" name="count" value="12" ${settings.count === 12 ? 'checked' : ''}>お試し12問</label><label class="count-option"><input type="radio" name="count" value="60" ${settings.count === 60 ? 'checked' : ''} ${pool.length < 60 ? 'disabled' : ''}>60問模試</label></div><p class="disabled-note">${pool.length < 60 ? '正式な60問模試は、出題可能な問題が60問以上になってから利用できます。' : '60問模試の制限時間は120分です。'}</p>` : `<div class="counts">${[10, 20, 60].map(n => `<label class="count-option"><input type="radio" name="count" value="${n}" ${settings.count === n ? 'checked' : ''}>${n}問</label>`).join('')}</div>`}</fieldset>
+  ${mock ? `<div class="counts"><label class="count-option"><input type="radio" name="count" value="12" ${settings.count === 12 ? 'checked' : ''}>お試し12問</label><label class="count-option"><input type="radio" name="count" value="60" ${settings.count === 60 ? 'checked' : ''} ${pool.length < 60 ? 'disabled' : ''}>60問模試</label></div><p class="disabled-note">${pool.length < 60 ? '正式な60問模試は、出題可能な問題が60問以上になってから利用できます。' : `60問模試の制限時間は${60 * gradeConfig(grade).minutesPerQuestion}分です。${grade === '3' ? '正誤30問・3択30問、各分野10問です。' : ''}`}</p>` : `<div class="counts">${[10, 20, 60].map(n => `<label class="count-option"><input type="radio" name="count" value="${n}" ${settings.count === n ? 'checked' : ''}>${n}問</label>`).join('')}</div>`}</fieldset>
   <div class="availability${pool.length < settings.count && !mock ? ' warning' : ''}">出題対象 <strong>${pool.length}</strong> 問
-  <p>${!pool.length ? (settings.mode === 'review' ? '復習待ちの問題はありません。通常演習で学習を進めましょう。' : '条件に合う問題がありません。分野・小単元を選び直してください。') : pool.length < settings.count && !mock ? `${settings.count}問の指定に対し、利用可能なのは${pool.length}問です。下のボタンで全${pool.length}問を出題するか、条件を選び直してください。` : mock ? `${settings.count}問・${settings.count * 2}分。回答確定後の変更はできません。正誤・解説は終了時に表示します。` : `重複なしで${Math.min(pool.length, settings.count)}問を出題します。問題と選択肢はランダムな順序です。`}</p></div>
+  <p>${!pool.length ? (settings.mode === 'review' ? '復習待ちの問題はありません。通常演習で学習を進めましょう。' : '条件に合う問題がありません。分野・小単元を選び直してください。') : pool.length < settings.count && !mock ? `${settings.count}問の指定に対し、利用可能なのは${pool.length}問です。下のボタンで全${pool.length}問を出題するか、条件を選び直してください。` : mock ? `${settings.count}問・${settings.count * gradeConfig(grade).minutesPerQuestion}分。回答確定後の変更はできません。正誤・解説は終了時に表示します。` : `重複なしで${Math.min(pool.length, settings.count)}問を出題します。問題と択一式の選択肢はランダムな順序です。○・×の順序は固定です。`}</p></div>
   ${bank.questions.some(q => q.needsReview) ? `<p class="small muted">内容が要確認の問題は出題対象から除外しています。</p>` : ''}
   <button class="button primary" data-action="start" ${!pool.length || (mock && pool.length < settings.count) ? 'disabled' : ''}>${pool.length < settings.count && !mock && pool.length ? `全${pool.length}問で演習をはじめる` : mock ? '模試をはじめる' : '演習をはじめる'} ${icon('arrow')}</button>
   </div><p class="small muted">学習履歴はこのブラウザに保存されます。PCとiPhoneの履歴は、JSONバックアップを使って移せます。</p></div>`;
@@ -119,9 +122,9 @@ function names(q) {
   return { field: f?.name || q.fieldId, unit: f?.units.find(u => u.id === q.unitId)?.name || q.unitId };
 }
 function explanation(q, order, chosenId) {
-  const letters = 'ABCD', correct = q.choices.find(c => c.id === q.correctChoiceId);
-  return `<div class="correct-answer"><strong>正解：${letters[order.indexOf(correct.id)]}</strong>　${esc(correct.text)}</div><h3>考え方のポイント</h3><p class="small">${esc(q.correctReason)}</p>
-    <div class="explanations">${order.map((id, i) => { const c = q.choices.find(c => c.id === id); return `<div class="explanation-item"><strong>${letters[i]}　${esc(c.text)} ${id === q.correctChoiceId ? '<span class="badge">正解</span>' : ''} ${id === chosenId ? '<span class="badge">あなたの回答</span>' : ''}</strong><p>${esc(c.explanation)}</p></div>`; }).join('')}</div>
+  const letters = q.format === 'true-false' ? ['○','×'] : q.format === 'three-choice' ? ['1','2','3'] : ['A','B','C','D'], correct = q.choices.find(c => c.id === q.correctChoiceId);
+  return `<div class="correct-answer"><strong>正解：${letters[order.indexOf(correct.id)]}</strong>${q.format === 'true-false' ? '' : '　' + esc(correct.text)}</div><h3>考え方のポイント</h3><p class="small">${esc(q.correctReason)}</p>
+    <div class="explanations">${order.map((id, i) => { const c = q.choices.find(c => c.id === id); return `<div class="explanation-item"><strong>${q.format === 'true-false' ? '' : letters[i] + '　'}${esc(c.text)} ${id === q.correctChoiceId ? '<span class="badge">正解</span>' : ''} ${id === chosenId ? '<span class="badge">あなたの回答</span>' : ''}</strong><p>${esc(c.explanation)}</p></div>`; }).join('')}</div>
     <details class="sources"><summary>参照資料・基準日</summary><p>法令・制度の基準日：${esc(q.basisDate)}<br>最終確認日：${esc(q.lastVerified)} · オリジナル問題 · ${esc(q.id)}</p>${q.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a>`).join('')}<p>外部の参照資料はオンライン時に閲覧できます。</p></details>`;
 }
 function quizView() {
@@ -130,8 +133,8 @@ function quizView() {
   const n = names(q), completed = Object.keys(active.answers).length, last = active.index === active.questions.length - 1;
   return `<div class="narrow"><div class="quiz-header"><div class="quiz-count">${modeNames[active.mode]} · <strong>${active.index + 1}</strong> / ${active.questions.length} 問</div><div class="quiz-tools"><button class="button secondary memo-toggle" data-action="memo" aria-controls="memo-panel" aria-expanded="${memo.open}">解答用メモ</button>${mock ? '<span class="timer" id="timer" role="timer" aria-label="模試の残り時間"></span>' : `<button class="text-button" data-action="pause">あとで続ける</button>`}</div></div>
   <div class="progress" role="progressbar" aria-label="回答進捗" aria-valuenow="${completed}" aria-valuemin="0" aria-valuemax="${active.questions.length}"><span style="width:${completed / active.questions.length * 100}%"></span></div>
-  <div class="panel quiz-panel"><div class="question-meta"><span class="badge">${esc(n.field)}</span><span class="badge">${esc(n.unit)}</span><span class="badge">${esc(q.difficulty)}</span></div><h1 class="question-title">${esc(q.prompt)}</h1>
-  <div class="choices" role="group" aria-label="4つの選択肢">${order.map((id, i) => { const c = q.choices.find(c => c.id === id), selected = active.selected === id; return `<button class="choice${selected ? ' selected' : ''}${show && id === q.correctChoiceId ? ' correct' : ''}${show && selected && id !== q.correctChoiceId ? ' wrong' : ''}" data-action="choice" data-id="${id}" aria-pressed="${selected}" ${answered ? 'disabled' : ''}><span class="choice-letter">${'ABCD'[i]}</span><span>${esc(c.text)}${show && id === q.correctChoiceId ? '（正解）' : ''}${show && selected && id !== q.correctChoiceId ? '（あなたの回答）' : ''}</span></button>`; }).join('')}</div>
+  <div class="panel quiz-panel"><div class="question-meta"><span class="badge">${esc(n.field)}</span><span class="badge">${esc(n.unit)}</span><span class="badge">${esc(q.difficulty)}</span><span class="badge">${gradeConfig(grade).label} · ${q.format === 'true-false' ? '正誤' : q.format === 'three-choice' ? '3択' : '4択'}</span></div><h1 class="question-title">${esc(q.prompt)}</h1>
+  <div class="choices" role="group" aria-label="${q.choices.length}つの選択肢">${order.map((id, i) => { const c = q.choices.find(c => c.id === id), selected = active.selected === id; return `<button class="choice${selected ? ' selected' : ''}${show && id === q.correctChoiceId ? ' correct' : ''}${show && selected && id !== q.correctChoiceId ? ' wrong' : ''}" data-action="choice" data-id="${id}" aria-pressed="${selected}" ${answered ? 'disabled' : ''}><span class="choice-letter">${q.format === 'true-false' ? (id === 'true' ? '○' : '×') : q.format === 'three-choice' ? i + 1 : 'ABCD'[i]}</span><span>${q.format === 'true-false' ? (id === 'true' ? '正しい' : '誤り') : esc(c.text)}${show && id === q.correctChoiceId ? '（正解）' : ''}${show && selected && id !== q.correctChoiceId ? '（あなたの回答）' : ''}</span></button>`; }).join('')}</div>
   ${show ? `<section class="answer-block" aria-label="解答・解説"><p class="answer-status${answered.choiceId !== q.correctChoiceId ? ' incorrect' : ''}" role="status">${answered.choiceId === q.correctChoiceId ? '正解です。' : '不正解 · 復習待ちに登録しました。'}</p>${explanation(q, order, answered.choiceId)}${active.mode === 'review' ? `<p class="small muted">${history.records[q.id]?.mastered ? 'この問題を克服しました。復習待ちから外れました。' : `復習での連続正解：${history.records[q.id]?.reviewStreak || 0} / 2回`}</p>` : ''}</section>` : ''}
   ${mock && answered ? '<p class="small muted" role="status" style="margin-top:18px">回答を確定しました。正誤は試験終了後に確認できます。</p>' : ''}
   <div class="quiz-actions"><span class="muted small">${answered ? '回答確定後の変更はできません' : '選択肢を選んでから確定してください'}</span><button class="button primary" data-action="${answered ? 'next' : 'submit'}" ${!answered && !active.selected ? 'disabled' : ''}>${answered ? last ? '結果を見る' : '次の問題へ' : '回答を確定する'} ${icon('arrow')}</button></div></div>
@@ -163,12 +166,12 @@ function statsView() {
 function dataView() {
   const unknown = Object.keys(history.records).filter(id => !bank.questions.some(q => q.id === id)).length;
   const pending = bank.questions.filter(q => q.needsReview);
-  return `${pageHead('大切な学習記録を守る', 'データ・設定', '履歴はこの端末のブラウザに保存されます。ときどきバックアップを残しましょう。')}
+  return `${pageHead('大切な学習記録を守る', 'データ・設定', `${gradeConfig(grade).label}の履歴を管理します。履歴とバックアップは級ごとに分かれています。`)}
   ${protectedStorage ? '<div class="panel danger-panel"><h2>保存データを保護しています</h2><p class="small">保存形式を確認できません。元のデータを保存してから、有効なバックアップを復元するか、履歴の初期化を行ってください。</p><button class="button secondary" data-action="raw-export">読み込めなかった元データを保存</button></div>' : ''}
   <div class="panel data-card"><div><h2>履歴をバックアップ</h2><p>累計成績・復習状態・演習結果をJSONファイルで保存します。<br>進行中の演習はバックアップに含みません。</p></div><button class="button primary" data-action="export" ${protectedStorage ? 'disabled' : ''}>JSONを書き出す</button></div>
   <div class="panel data-card"><div><h2>バックアップから復元</h2><p>ファイルを検証した後、確認画面を表示します。<br>復元すると現在の履歴を置き換え、途中の演習を終了します。</p></div><button class="button secondary" data-action="import">JSONを読み込む</button><input type="file" id="import-file" accept=".json,application/json" hidden></div>
-  <div class="panel"><h2>このアプリについて</h2><p class="small">問題データ ${esc(bank.dataVersion)} · ${bank.questions.length}問 · 保存形式 v${VERSION}<br>すべての問題は学習用のオリジナル4択問題です。法令・制度の基準日は各問題の解説で確認できます。</p><p class="small muted">${unknown ? `現在の問題集に含まれない${unknown}件の問題IDの履歴も保持しています。成績の集計対象は現在の問題集です。<br>` : ''}自動同期はありません。別の端末へ移すときはバックアップを利用してください。プライベートブラウズやブラウザデータの消去で履歴が失われる場合があります。</p><a class="small" href="${esc(bank.taxonomySource.url)}" target="_blank" rel="noopener noreferrer">日本FP協会の2級試験範囲を確認 ↗</a></div>
-  <div class="panel"><h2>問題の検証・校正</h2><p class="small">全${bank.questions.length}問の問題文・正解・全4選択肢・解説を照合しました。<br>確認済み ${bank.questions.length-pending.length}問 · 要確認 ${pending.length}問<br>法令基準日：${esc(bank.lawBasisDate || '各問題を参照')} · 照合日：2026-10-11</p><p class="small">要確認の問題はすべての演習・模試から除外しています。検証記録には、問題ごとの修正内容と出典URLを収録しています。</p><div class="button-row"><a class="button secondary" href="./AUDIT.md" download>検証記録を保存</a><a class="button secondary" href="./AUDIT.json" download>検証JSONを保存</a></div>${pending.map(q=>`<details class="explanation-toggle"><summary><span class="badge">要確認</span><span>${esc(q.id)} · ${esc(names(q).unit)}</span></summary><div class="detail-content"><p>${esc(q.prompt)}</p><p class="small">${esc(q.reviewReason)}</p>${q.sources.map(s=>`<p class="small"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a></p>`).join('')}</div></details>`).join('')}</div>
+  <div class="panel"><h2>このアプリについて</h2><p class="small">問題データ ${esc(bank.dataVersion)} · ${bank.questions.length}問 · 保存形式 v${VERSION}<br>${gradeConfig(grade).label}の学習用オリジナル${gradeConfig(grade).formatLabel}問題です。法令・制度の基準日は各問題の解説で確認できます。</p><p class="small muted">${unknown ? `現在の問題集に含まれない${unknown}件の問題IDの履歴も保持しています。成績の集計対象は現在の問題集です。<br>` : ''}自動同期はありません。別の端末へ移すときはバックアップを利用してください。プライベートブラウズやブラウザデータの消去で履歴が失われる場合があります。</p><a class="small" href="${esc(bank.taxonomySource.url)}" target="_blank" rel="noopener noreferrer">日本FP協会の${grade}級試験範囲を確認 ↗</a></div>
+  <div class="panel"><h2>問題の検証・校正</h2><p class="small">全${bank.questions.length}問の問題文・正解・全選択肢・解説を照合しました。<br>確認済み ${bank.questions.length-pending.length}問 · 要確認 ${pending.length}問<br>法令基準日：${esc(bank.lawBasisDate || '各問題を参照')} · 照合日：2026-10-11</p><p class="small">要確認の問題はすべての演習・模試から除外しています。検証記録には、問題ごとの修正内容と出典URLを収録しています。</p><div class="button-row"><a class="button secondary" href="${gradeConfig(grade).audit}.md" download>検証記録を保存</a><a class="button secondary" href="${gradeConfig(grade).audit}.json" download>検証JSONを保存</a></div>${pending.map(q=>`<details class="explanation-toggle"><summary><span class="badge">要確認</span><span>${esc(q.id)} · ${esc(names(q).unit)}</span></summary><div class="detail-content"><p>${esc(q.prompt)}</p><p class="small">${esc(q.reviewReason)}</p>${q.sources.map(s=>`<p class="small"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a></p>`).join('')}</div></details>`).join('')}</div>
   <div class="panel"><h2>iPhoneでホーム画面に追加</h2><ol class="help-list"><li>HTTPSで公開したこのアプリを、Safariで開きます。</li><li>共有メニューから「ホーム画面に追加」を選びます。</li><li>追加したアイコンで起動し、一度オンラインで問題を読み込みます。</li><li>上部に「オフライン利用の準備完了」が表示されてから、オフラインで利用してください。</li></ol><p class="small muted">初回は接続が必要です。参照先の外部サイトはオフラインでは開けません。</p></div>
   <div class="panel data-card danger-panel"><div><h2>学習履歴を初期化</h2><p>成績・復習状態・途中の演習を削除します。<br>この操作は取り消せません。必要なら先にバックアップしてください。</p></div><button class="button secondary" data-action="reset">履歴を削除する</button></div>`;
 }
@@ -182,7 +185,7 @@ function render(focus = false) {
   main.innerHTML = views[page]();
   syncMemo();
   document.querySelectorAll('nav a').forEach(a => { const selected = a.dataset.page === (['quiz', 'result'].includes(page) ? 'settings' : page); a.classList.toggle('active', selected); if (selected) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
-  document.title = `${{home:'ホーム',settings:'出題設定',quiz:'問題演習',result:'学習結果',stats:'学習成績',data:'データ・設定'}[page]} | FP2級 学習トレーナー`;
+  document.title = `${{home:'ホーム',settings:'出題設定',quiz:'問題演習',result:'学習結果',stats:'学習成績',data:'データ・設定'}[page]} | ${gradeConfig(grade).label} 学習トレーナー`;
   tick();
   if (focus) { main.scrollTop = 0; main.focus({ preventScroll: true }); window.scrollTo(0, 0); }
 }
@@ -258,15 +261,15 @@ main.addEventListener('click', async event => {
     }
     else if (action === 'next' && active && canMutate()) { if (expired(active)) tick(); else if (nextQuestion(active)) { persist(); render(true); } else if (active.answers[active.questions[active.index].id]) finish(); }
     else if (action === 'finish' && active && canMutate()) { const s = active; if (await confirmAction('ここまでで終了しますか？', `確定した${Object.keys(s.answers).length}問を記録します。未回答は不正解履歴に加算しません。`, '終了して結果を見る') && active === s) finish(); }
-    else if (action === 'export') { download(JSON.stringify(exportBackup(history, bank.dataVersion), null, 2), `fp2-history-${new Date().toISOString().slice(0, 10)}.json`); showNotice('バックアップを書き出しました。ダウンロードしたファイルを保管してください。'); }
-    else if (action === 'raw-export') { download(storage.getItem(STORAGE_KEY) || '', 'fp2-original-data.txt', 'text/plain'); }
+    else if (action === 'export') { download(JSON.stringify(exportBackup(history, bank.dataVersion, new Date().toISOString(), grade), null, 2), `fp${grade}-history-${new Date().toISOString().slice(0, 10)}.json`); showNotice('バックアップを書き出しました。ダウンロードしたファイルを保管してください。'); }
+    else if (action === 'raw-export') { download(storage.getItem(gradeConfig(grade).storageKey) || '', `fp${grade}-original-data.txt`, 'text/plain'); }
     else if (action === 'import') document.querySelector('#import-file').click();
     else if (action === 'reset') {
       if (conflictingTab) { canMutate(); return; }
-      if (await confirmAction('学習履歴を削除しますか？', '累計成績・復習状態・途中の演習をすべて削除します。必要な履歴は、先にJSONバックアップで保存してください。', 'すべて削除する', true)) {
+      if (await confirmAction(`${gradeConfig(grade).label}の学習履歴を削除しますか？`, `${gradeConfig(grade).label}の累計成績・復習状態・途中の演習を削除します。必要な履歴は、先にこの級のJSONバックアップで保存してください。`, 'この級の履歴を削除する', true)) {
         // 先にストレージへ保存。失敗時は画面上の履歴も維持する。
         const clean = emptyHistory();
-        try { saveState(storage, clean, null); } catch { showNotice('削除を保存できませんでした。履歴は変更していません。', true); return; }
+        try { saveState(storage, clean, null, grade); } catch { showNotice('削除を保存できませんでした。履歴は変更していません。', true); return; }
         history = clean; active = null; resultSession = null; protectedStorage = false; storageFailed = false; showNotice('学習履歴を初期化しました。'); render();
       }
     }
@@ -278,18 +281,21 @@ async function readImport(input) {
   if (conflictingTab) { canMutate(); return; }
   try {
     if (file.size > 20 * 1024 * 1024) throw new Error('バックアップは20MB以下にしてください。');
-    const imported = importBackup(await file.text());
+    const importGrade = grade;
+    const text = await file.text();
+    if (grade !== importGrade) throw new Error('級が変更されたため、読み込みを中止しました。');
+    const imported = importBackup(text, importGrade);
     const a = aggregate(bank.questions, imported);
     const ok = await confirmAction('このバックアップを復元しますか？', `現在の問題集の回答 ${a.attempts}回・正解 ${a.correct}回・復習待ち ${a.pending}問を復元します。\n現在の履歴を置き換え、途中の演習は終了します。必要なら先に現在の履歴を書き出してください。`, '履歴を置き換える');
-    if (!ok) return;
+    if (!ok || grade !== importGrade) return;
     if (conflictingTab) { canMutate(); return; }
-    try { saveState(storage, imported, null); } catch { throw new Error('端末に保存できないため、復元を中止しました。現在の履歴は変更していません。'); }
+    try { saveState(storage, imported, null, grade); } catch { throw new Error('端末に保存できないため、復元を中止しました。現在の履歴は変更していません。'); }
     history = imported; active = null; resultSession = null; protectedStorage = false; storageFailed = false;
     showNotice('バックアップから学習履歴を復元しました。'); render();
   } catch (err) { showNotice(`読み込みを中止しました：${err.message} 現在の履歴は変更していません。`, true); }
 }
 window.addEventListener('hashchange', () => render(true));
-window.addEventListener('storage', event => { if (event.key === STORAGE_KEY || event.key === null) { conflictingTab = true; showNotice('別のタブで学習データが変更されました。記録の上書きを防ぐため、この画面を再読み込みしてください。', true); } });
+window.addEventListener('storage', event => { if (event.key === gradeConfig(grade).storageKey || event.key === null) { conflictingTab = true; showNotice('別のタブで学習データが変更されました。記録の上書きを防ぐため、この画面を再読み込みしてください。', true); } });
 document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
 setInterval(tick, 1000);
 
@@ -314,19 +320,48 @@ document.querySelector('#apply-update').addEventListener('click', () => {
   if (storageFailed || protectedStorage || conflictingTab) { showNotice('学習データの保存状態を確認し、バックアップを取ってから再読み込みしてください。', true); return; }
   waitingWorker?.postMessage({ type: 'ACTIVATE_UPDATE' });
 });
+
+function loadGradeState() {
+  bank = banks[grade]; history = emptyHistory(); active = null; resultSession = null;
+  protectedStorage = false; storageFailed = false; conflictingTab = false;
+  settings = { mode: 'random', count: 10, fieldIds: bank.fields.map(f=>f.id), unitId: bank.fields[0].units[0].id };
+  try {
+    if (!storage) throw new Error('保存領域なし');
+    const state = unsavedGrades.get(grade) || loadState(storage, bank); history = state.history; active = state.active;
+    if (unsavedGrades.has(grade)) storageFailed = true;
+    if (state.warning) showNotice(state.warning,true);
+  } catch {
+    if (!storage) {
+      storage = { getItem:()=>null, setItem:()=>{throw new Error('保存領域なし');} };
+      storageFailed = true; showNotice('ブラウザに保存できません。学習後に選択中の級のJSONバックアップを保存してください。',true);
+    } else { protectedStorage = true; showNotice('選択中の級の保存データを読み込めません。元データを保護しています。「データ・設定」で確認してください。',true); }
+  }
+  document.querySelector('#grade-select').value = grade;
+  document.querySelector('.topbar-title').textContent = gradeConfig(grade).label + ' 学習トレーナー';
+  document.querySelector('.sidebar-note p').textContent = gradeConfig(grade).label + '・6分野・' + bank.questions.length + '問';
+  document.querySelector('.stage-tag').textContent = gradeConfig(grade).formatLabel + ' / ' + bank.questions.length + '問';
+}
+document.querySelector('#grade-select').addEventListener('change', event => {
+  const next = event.target.value;
+  if (!GRADES[next] || next === grade) return;
+  if (dialog.open || !canMutate()) { event.target.value = grade; return; }
+  persist();
+  grade = next; notice.hidden = true; loadGradeState();
+  try { storage.setItem(GRADE_PREFERENCE_KEY,grade); } catch { showNotice('級の選択を保存できません。次回起動時はFP2級から始まります。',true); }
+  if (active && expired(active)) { finish(); showNotice('前回の模試は制限時間を過ぎたため、確定した回答を採点しました。'); }
+  else go('home');
+});
+
 async function init() {
   try {
-    const response = await fetch('./questions.json');
-    if (!response.ok) throw new Error('問題データを取得できませんでした。');
-    bank = validateBank(await response.json());
-    document.querySelector('.sidebar-note p').textContent = `6分野・${bank.questions.length}問の基礎演習`;
-    document.querySelector('.stage-tag').textContent = bank.questions.length === 12 ? '第1段階 / 12問版' : `問題集 / ${bank.questions.length}問`;
-    settings.fieldIds = bank.fields.map(f => f.id); settings.unitId = bank.fields[0].units[0].id;
-    try { storage = window.localStorage; const state = loadState(storage, bank); history = state.history; active = state.active; if (state.warning) showNotice(state.warning, true); }
-    catch (err) {
-      if (!storage) { storage = { getItem: () => null, setItem: () => { throw new Error('保存領域がありません。'); } }; storageFailed = true; showNotice('ブラウザの保存領域が利用できません。学習後にJSONバックアップを保存してください。', true); }
-      else { protectedStorage = true; showNotice('保存データを読み込めません。元データを保護しています。「データ・設定」でバックアップ復元または初期化を行ってください。', true); }
-    }
+    await Promise.all(Object.entries(GRADES).map(async ([level,config]) => {
+      const response = await fetch(config.bankFile);
+      if (!response.ok) throw new Error(config.label + 'の問題データを取得できませんでした。');
+      banks[level] = validateBank(await response.json());
+    }));
+    try { storage = window.localStorage; } catch { /* 保存不可時も演習を続けられる。 */ }
+    grade = readGrade(storage); loadGradeState();
+    document.querySelector('#grade-select').disabled = false;
     if (active && expired(active)) { finish(); showNotice('前回の模試は制限時間を過ぎたため、確定した回答を採点しました。'); }
     render(); networkStatus(); setupPWA();
   } catch (err) { main.innerHTML = `<div class="panel"><h1>アプリを起動できませんでした</h1><p>${esc(err.message)}</p><p>フォルダをHTTPサーバーで開き、必要なファイルがそろっているか確認してください。初回はオンラインで読み込みが必要です。</p><button class="button primary" onclick="location.reload()">再読み込み</button></div>`; }

@@ -1,4 +1,5 @@
 // DOM に依存しない学習ロジック。問題・選択肢は常に ID で扱う。
+import { gradeConfig } from './grades.js';
 export const VERSION = 1;
 export const STORAGE_KEY = 'fp2-trainer:v1';
 const MODES = ['random', 'field', 'unit', 'review', 'mock'];
@@ -14,6 +15,7 @@ const dayOK = value => /^\d{4}-\d{2}-\d{2}$/.test(value) && dateOK(value) && new
 export function validateBank(bank) {
   requireThat(objectOK(bank) && bank.schemaVersion === VERSION, '問題データのバージョンが対応していません。');
   requireThat(textOK(bank.dataVersion), '問題データの版がありません。');
+  gradeConfig(bank.grade ?? '2');
   requireThat(objectOK(bank.taxonomySource) && textOK(bank.taxonomySource.title) && typeof bank.taxonomySource.url === 'string' && /^https:\/\//.test(bank.taxonomySource.url), '試験範囲の参照資料が不正です。');
   requireThat(Array.isArray(bank.fields) && bank.fields.length === 6 && uniqueIDs(bank.fields), '6分野の定義を確認してください。');
   const units = new Set();
@@ -29,7 +31,9 @@ export function validateBank(bank) {
     const field = bank.fields.find(f => f.id === q.fieldId);
     requireThat(field && field.units.some(u => u.id === q.unitId), `${q.id}: 分野・小単元が不正です。`);
     requireThat(textOK(q.prompt) && ['基礎', '標準', '応用'].includes(q.difficulty), `${q.id}: 問題文・難易度が不正です。`);
-    requireThat(Array.isArray(q.choices) && q.choices.length === 4 && uniqueIDs(q.choices), `${q.id}: 選択肢は一意のIDを持つ4件にしてください。`);
+    const choiceCount = String(bank.grade) === '3' ? ({ 'true-false': 2, 'three-choice': 3 })[q.format] : 4;
+    requireThat(choiceCount && Array.isArray(q.choices) && q.choices.length === choiceCount && uniqueIDs(q.choices), `${q.id}: 出題形式と選択肢の件数を確認してください。`);
+    if (q.format === 'true-false') requireThat(q.choices[0].id === 'true' && q.choices[1].id === 'false', `${q.id}: ○・×の順序を確認してください。`);
     requireThat(q.choices.some(c => c.id === q.correctChoiceId) && textOK(q.correctReason), `${q.id}: 正解情報が不正です。`);
     q.choices.forEach(c => requireThat(textOK(c.text) && textOK(c.explanation), `${q.id}: 全選択肢に解説が必要です。`));
     requireThat(Array.isArray(q.sources) && q.sources.length > 0 && q.sources.every(s => textOK(s.title) && /^https:\/\//.test(s.url)), `${q.id}: 参照資料が不正です。`);
@@ -69,14 +73,14 @@ export function validateHistory(value) {
   return clean;
 }
 
-export function exportBackup(history, dataVersion, now = new Date().toISOString()) {
-  return { app: 'fp2-study-trainer', schemaVersion: VERSION, exportedAt: now, dataVersion, history: validateHistory(history) };
+export function exportBackup(history, dataVersion, now = new Date().toISOString(), grade = '2') {
+  return { app: gradeConfig(grade).backupApp, schemaVersion: VERSION, exportedAt: now, dataVersion, history: validateHistory(history) };
 }
-export function importBackup(text) {
+export function importBackup(text, grade = '2') {
   requireThat(typeof text === 'string' && text.length <= 20 * 1024 * 1024, 'バックアップは20MB以下にしてください。');
   let parsed;
   try { parsed = JSON.parse(text); } catch { throw new Error('JSONファイルとして読み込めませんでした。'); }
-  requireThat(objectOK(parsed) && parsed.app === 'fp2-study-trainer' && parsed.schemaVersion === VERSION && dateOK(parsed.exportedAt), 'このアプリの対応するバックアップではありません。');
+  requireThat(objectOK(parsed) && parsed.app === gradeConfig(grade).backupApp && parsed.schemaVersion === VERSION && dateOK(parsed.exportedAt), '選択中の級のバックアップではありません。級を切り替えてから読み込んでください。');
   return validateHistory(parsed.history);
 }
 
@@ -128,13 +132,24 @@ export function createSession(bank, history, settings, now = Date.now(), random 
   const pool = poolFor(bank, history, settings);
   requireThat(pool.length > 0, '条件に合う問題がありません。別の条件を選んでください。');
   if (settings.mode === 'mock') requireThat(pool.length >= settings.count, '模試に必要な問題数がありません。');
-  const questions = shuffle(pool, random).slice(0, settings.count).map(q => JSON.parse(JSON.stringify(q)));
+  let selected = shuffle(pool, random).slice(0, settings.count);
+  if (settings.mode === 'mock' && String(bank.grade) === '3') {
+    // 60問は各分野○×5問・3択5問。お試し12問も各分野各形式1問。
+    const perField = settings.count === 60 ? 5 : 1;
+    requireThat([60, 12].includes(settings.count), '3級模試は60問または12問を選んでください。');
+    selected = ['true-false', 'three-choice'].flatMap(format => bank.fields.flatMap(field => {
+      const candidates = pool.filter(q => q.fieldId === field.id && q.format === format);
+      requireThat(candidates.length >= perField, '3級模試の各分野・各形式に必要な問題数が不足しています。');
+      return shuffle(candidates, random).slice(0, perField);
+    }));
+  }
+  const questions = selected.map(q => JSON.parse(JSON.stringify(q)));
   return {
     id: `s-${now}-${Math.floor(random() * 1e9)}`, mode: settings.mode,
     dataVersion: bank.dataVersion, questions,
-    orders: Object.fromEntries(questions.map(q => [q.id, shuffle(q.choices.map(c => c.id), random)])),
+    orders: Object.fromEntries(questions.map(q => [q.id, q.format === 'true-false' ? q.choices.map(c => c.id) : shuffle(q.choices.map(c => c.id), random)])),
     answers: {}, index: 0, selected: null, startedAt: new Date(now).toISOString(),
-    deadline: settings.mode === 'mock' ? now + settings.count * 120000 : null
+    deadline: settings.mode === 'mock' ? now + settings.count * gradeConfig(bank.grade ?? '2').minutesPerQuestion * 60000 : null
   };
 }
 export function expired(session, now = Date.now()) { return session.mode === 'mock' && now >= session.deadline; }
@@ -180,7 +195,8 @@ export function validateActive(session, bank) {
   requireThat(Object.keys(session.answers).every(id => ids.has(id)), '演習内にない回答があります。');
   session.questions.forEach((q, i) => {
     const order = session.orders[q.id];
-    requireThat(Array.isArray(order) && order.length === 4 && new Set(order).size === 4 && order.every(id => q.choices.some(c => c.id === id)), '選択肢の順序が不正です。');
+    requireThat(Array.isArray(order) && order.length === q.choices.length && new Set(order).size === q.choices.length && order.every(id => q.choices.some(c => c.id === id)), '選択肢の順序が不正です。');
+    if (q.format === 'true-false') requireThat(order[0] === 'true' && order[1] === 'false', '○・×の順序が不正です。');
     const a = session.answers[q.id];
     requireThat(i >= session.index || !!a, '未回答の問題を飛ばしています。');
     requireThat(i <= session.index || !a, '進捗より先の回答があります。');
@@ -193,7 +209,7 @@ export function validateActive(session, bank) {
 }
 
 export function loadState(storage, bank) {
-  const text = storage.getItem(STORAGE_KEY);
+  const text = storage.getItem(gradeConfig(bank.grade ?? '2').storageKey);
   if (!text) return { history: emptyHistory(), active: null };
   const state = JSON.parse(text);
   requireThat(objectOK(state) && state.schemaVersion === VERSION, '保存形式が対応していません。');
@@ -213,6 +229,6 @@ export function loadState(storage, bank) {
   }
   catch { return { history, active: null, warning: '途中の演習データを再開できませんでした。累計の学習履歴は保持しています。模試の未採点回答は累計に含まれません。' }; }
 }
-export function saveState(storage, history, active) {
-  storage.setItem(STORAGE_KEY, JSON.stringify({ schemaVersion: VERSION, history, active }));
+export function saveState(storage, history, active, grade = '2') {
+  storage.setItem(gradeConfig(grade).storageKey, JSON.stringify({ schemaVersion: VERSION, history, active }));
 }

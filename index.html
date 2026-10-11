@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#174e48">
-  <meta name="description" content="6分野を少しずつ。FP2級の4択演習、間違い直し、学習成績をオフラインで。">
+  <meta name="description" content="6分野を少しずつ。FP2級・FP3級の演習、間違い直し、学習成績をオフラインで。">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="FP2級">
+  <meta name="apple-mobile-web-app-title" content="FP2級・FP3級">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/png" href="./icons/icon-192.png">
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
   <link rel="stylesheet" href="./style.css">
-  <title>FP2級 学習トレーナー</title>
+  <title>FP2級・FP3級 学習トレーナー</title>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
   <aside class="sidebar">
-    <a class="brand" href="#home" aria-label="FP2級 学習トレーナー ホーム"><span class="brand-mark">FP<span>2</span></span><span>FP2級<span class="brand-sub">学習トレーナー</span></span></a>
+    <a class="brand" href="#home" aria-label="FP2級・FP3級 学習トレーナー ホーム"><span class="brand-mark">FP<span>2・3</span></span><span>FP2級・FP3級<span class="brand-sub">学習トレーナー</span></span></a>
     <p class="nav-label">学習メニュー</p>
     <nav id="nav" aria-label="メインメニュー">
       <a href="#home" data-page="home"><span class="nav-icon" data-icon="home"></span><span>ホーム</span></a>
@@ -28,17 +28,17 @@
     <div class="sidebar-note"><span class="small-dot"></span>あなたのペースで、着実に。<p>6分野・300問の演習</p></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><span>FP2級 学習トレーナー</span><div class="status"><span id="network-status">接続状況を確認中</span><span class="stage-tag">問題集 / 300問</span></div></header>
+    <header class="topbar"><span class="topbar-title">FP 学習トレーナー</span><label class="grade-control" for="grade-select">出題範囲<select id="grade-select" aria-label="出題範囲" disabled><option value="2">FP2級（4択）</option><option value="3">FP3級（○×・3択）</option></select></label><div class="status"><span id="network-status">接続状況を確認中</span><span class="stage-tag">問題集 / 300問</span></div></header>
     <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
     <div id="update-banner" class="notice update-notice" hidden>新しいアプリを利用できます。<button id="apply-update" class="text-button">更新する</button><span class="muted"> 演習中は終了後に更新してください。</span></div>
     <div class="study-workspace">
-      <main id="main" tabindex="-1"><div class="loading"><span class="brand-mark">FP<span>2</span></span><p>問題データを読み込んでいます…</p></div></main>
+      <main id="main" tabindex="-1"><div class="loading"><span class="brand-mark">FP<span>2・3</span></span><p>問題データを読み込んでいます…</p></div></main>
       <aside id="memo-panel" class="memo-panel" aria-labelledby="memo-title" hidden>
         <div class="memo-heading"><h2 id="memo-title">解答用メモ</h2><button id="memo-close" class="text-button" aria-label="メモを閉じる">閉じる</button></div>
         <textarea id="answer-memo" aria-label="解答用メモ" spellcheck="false"></textarea>
       </aside>
     </div>
-    <footer class="footer">FP2級 学習トレーナー <span>毎日の一問を、合格への一歩に。</span></footer>
+    <footer class="footer">FP2級・FP3級 学習トレーナー <span>毎日の一問を、合格への一歩に。</span></footer>
   </div>
   <dialog id="confirm-dialog" aria-labelledby="dialog-title"><form method="dialog"><h2 id="dialog-title"></h2><p id="dialog-message"></p><div class="button-row"><button value="cancel" class="button secondary">キャンセル</button><button id="dialog-confirm" value="confirm" class="button primary">実行する</button></div></form></dialog>
   <noscript><p>このアプリを使うにはJavaScriptを有効にしてください。</p></noscript>

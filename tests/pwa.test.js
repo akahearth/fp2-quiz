@@ -40,18 +40,18 @@ function workerEnvironment(script = source) {
   }
   return { dispatch, requests, cacheModes, cachesMap, caches, setOnline: value => online = value, get skipped() { return skipped; }, get claimed() { return claimed; } };
 }
-test('Service Workerはメモ・検証記録を含む全14リソースをプリキャッシュする', async () => {
+test('Service Workerは両級の問題・メモ・検証記録を含む全19リソースをプリキャッシュする', async () => {
   const w = workerEnvironment(); await w.dispatch('install');
-  assert.equal(w.requests.length, 14); assert.ok(w.requests.every(url => url.startsWith(scope)));
+  assert.equal(w.requests.length, 19); assert.ok(w.requests.every(url => url.startsWith(scope)));
   assert.ok(w.requests.includes(scope + 'questions.json')); assert.ok(w.requests.includes(scope + 'core.js'));
   assert.equal(w.skipped, 0); // 更新はユーザー操作まで待機。
 });
 test('サーバー切断後もHTML・CSS・JS・問題JSON・アイコンをキャッシュから返す', async () => {
   const w = workerEnvironment(); await w.dispatch('install'); await w.dispatch('activate'); w.setOnline(false);
-  for (const file of ['', 'index.html', 'style.css', 'app.js', 'core.js', 'memo.js', 'questions.json', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'AUDIT.md', 'AUDIT.json', 'SOURCES.md']) {
+  for (const file of ['', 'index.html', 'style.css', 'app.js', 'core.js', 'grades.js', 'memo.js', 'questions.json', 'questions-fp3.json', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'AUDIT.md', 'AUDIT.json', 'SOURCES.md', 'AUDIT-FP3.md', 'AUDIT-FP3.json', 'SOURCES-FP3.md']) {
     const response = await w.dispatch('fetch', { request: new Request(scope + file) }); assert.equal(response.status, 200); assert.ok((await response.arrayBuffer()).byteLength > 0);
   }
-  assert.equal(w.requests.length, 14); assert.equal(w.claimed, 1);
+  assert.equal(w.requests.length, 19); assert.equal(w.claimed, 1);
 });
 test('URLに検索パラメータがあってもサブディレクトリの起動画面をキャッシュから開く', async () => {
   const w = workerEnvironment(); await w.dispatch('install'); w.setOnline(false);

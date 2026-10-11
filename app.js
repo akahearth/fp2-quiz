@@ -13,9 +13,19 @@ memoInput.value = memo.text;
 function syncMemo() {
   const button = main.querySelector('[data-action="memo"]');
   memoPanel.hidden = !button || !memo.open;
+  document.body.classList.toggle('memo-open', !memoPanel.hidden);
   button?.setAttribute('aria-expanded', String(memo.open));
-  if (!memo.available) document.querySelector('#memo-help').textContent = '問題・演習が変わっても保持します。保存領域が利用できないため、再読み込みすると消えます。';
 }
+// iPhoneのソフトウェアキーボード表示中も、見える範囲を上下の窓に配分する。
+function fitStudyViewport() {
+  const viewport = window.visualViewport;
+  document.documentElement.style.setProperty('--study-viewport-height', `${viewport?.height ?? window.innerHeight}px`);
+  document.documentElement.style.setProperty('--study-viewport-top', `${viewport?.offsetTop ?? 0}px`);
+}
+window.visualViewport?.addEventListener('resize', fitStudyViewport);
+window.visualViewport?.addEventListener('scroll', fitStudyViewport);
+window.addEventListener('resize', fitStudyViewport);
+fitStudyViewport();
 memoInput.addEventListener('input', () => { memo.setText(memoInput.value); syncMemo(); });
 document.querySelector('#memo-close').addEventListener('click', () => {
   memo.setOpen(false); syncMemo(); main.querySelector('[data-action="memo"]')?.focus();
@@ -152,11 +162,13 @@ function statsView() {
 }
 function dataView() {
   const unknown = Object.keys(history.records).filter(id => !bank.questions.some(q => q.id === id)).length;
+  const pending = bank.questions.filter(q => q.needsReview);
   return `${pageHead('大切な学習記録を守る', 'データ・設定', '履歴はこの端末のブラウザに保存されます。ときどきバックアップを残しましょう。')}
   ${protectedStorage ? '<div class="panel danger-panel"><h2>保存データを保護しています</h2><p class="small">保存形式を確認できません。元のデータを保存してから、有効なバックアップを復元するか、履歴の初期化を行ってください。</p><button class="button secondary" data-action="raw-export">読み込めなかった元データを保存</button></div>' : ''}
   <div class="panel data-card"><div><h2>履歴をバックアップ</h2><p>累計成績・復習状態・演習結果をJSONファイルで保存します。<br>進行中の演習はバックアップに含みません。</p></div><button class="button primary" data-action="export" ${protectedStorage ? 'disabled' : ''}>JSONを書き出す</button></div>
   <div class="panel data-card"><div><h2>バックアップから復元</h2><p>ファイルを検証した後、確認画面を表示します。<br>復元すると現在の履歴を置き換え、途中の演習を終了します。</p></div><button class="button secondary" data-action="import">JSONを読み込む</button><input type="file" id="import-file" accept=".json,application/json" hidden></div>
   <div class="panel"><h2>このアプリについて</h2><p class="small">問題データ ${esc(bank.dataVersion)} · ${bank.questions.length}問 · 保存形式 v${VERSION}<br>すべての問題は学習用のオリジナル4択問題です。法令・制度の基準日は各問題の解説で確認できます。</p><p class="small muted">${unknown ? `現在の問題集に含まれない${unknown}件の問題IDの履歴も保持しています。成績の集計対象は現在の問題集です。<br>` : ''}自動同期はありません。別の端末へ移すときはバックアップを利用してください。プライベートブラウズやブラウザデータの消去で履歴が失われる場合があります。</p><a class="small" href="${esc(bank.taxonomySource.url)}" target="_blank" rel="noopener noreferrer">日本FP協会の2級試験範囲を確認 ↗</a></div>
+  <div class="panel"><h2>問題の検証・校正</h2><p class="small">全${bank.questions.length}問の問題文・正解・全4選択肢・解説を照合しました。<br>確認済み ${bank.questions.length-pending.length}問 · 要確認 ${pending.length}問<br>法令基準日：${esc(bank.lawBasisDate || '各問題を参照')} · 照合日：2026-10-11</p><p class="small">要確認の問題はすべての演習・模試から除外しています。検証記録には、問題ごとの修正内容と出典URLを収録しています。</p><div class="button-row"><a class="button secondary" href="./AUDIT.md" download>検証記録を保存</a><a class="button secondary" href="./AUDIT.json" download>検証JSONを保存</a></div>${pending.map(q=>`<details class="explanation-toggle"><summary><span class="badge">要確認</span><span>${esc(q.id)} · ${esc(names(q).unit)}</span></summary><div class="detail-content"><p>${esc(q.prompt)}</p><p class="small">${esc(q.reviewReason)}</p>${q.sources.map(s=>`<p class="small"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a></p>`).join('')}</div></details>`).join('')}</div>
   <div class="panel"><h2>iPhoneでホーム画面に追加</h2><ol class="help-list"><li>HTTPSで公開したこのアプリを、Safariで開きます。</li><li>共有メニューから「ホーム画面に追加」を選びます。</li><li>追加したアイコンで起動し、一度オンラインで問題を読み込みます。</li><li>上部に「オフライン利用の準備完了」が表示されてから、オフラインで利用してください。</li></ol><p class="small muted">初回は接続が必要です。参照先の外部サイトはオフラインでは開けません。</p></div>
   <div class="panel data-card danger-panel"><div><h2>学習履歴を初期化</h2><p>成績・復習状態・途中の演習を削除します。<br>この操作は取り消せません。必要なら先にバックアップしてください。</p></div><button class="button secondary" data-action="reset">履歴を削除する</button></div>`;
 }
@@ -172,7 +184,7 @@ function render(focus = false) {
   document.querySelectorAll('nav a').forEach(a => { const selected = a.dataset.page === (['quiz', 'result'].includes(page) ? 'settings' : page); a.classList.toggle('active', selected); if (selected) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
   document.title = `${{home:'ホーム',settings:'出題設定',quiz:'問題演習',result:'学習結果',stats:'学習成績',data:'データ・設定'}[page]} | FP2級 学習トレーナー`;
   tick();
-  if (focus) { main.focus({ preventScroll: true }); window.scrollTo(0, 0); }
+  if (focus) { main.scrollTop = 0; main.focus({ preventScroll: true }); window.scrollTo(0, 0); }
 }
 function go(page) { if (location.hash === `#${page}`) render(true); else location.hash = page; }
 function confirmAction(title, message, label = '実行する', danger = false) {
@@ -235,7 +247,7 @@ main.addEventListener('click', async event => {
     else if (action === 'start') { el.disabled = true; await start(); if (el.isConnected) el.disabled = false; }
     else if (action === 'resume') go('quiz');
     else if (action === 'pause') go('home');
-    else if (action === 'memo') { memo.setOpen(!memo.open); syncMemo(); if (memo.open) memoInput.focus(); }
+    else if (action === 'memo') { memo.setOpen(!memo.open); syncMemo(); }
     else if (action === 'choice' && active && canMutate()) {
       if (expired(active)) { tick(); return; }
       if (!active.answers[active.questions[active.index].id]) { active.selected = el.dataset.id; persist(); render(); main.querySelector(`[data-action="choice"][data-id="${el.dataset.id}"]`)?.focus({ preventScroll: true }); }

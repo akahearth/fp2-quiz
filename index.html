@@ -31,16 +31,16 @@
     <header class="topbar"><span>FP2級 学習トレーナー</span><div class="status"><span id="network-status">接続状況を確認中</span><span class="stage-tag">問題集 / 300問</span></div></header>
     <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
     <div id="update-banner" class="notice update-notice" hidden>新しいアプリを利用できます。<button id="apply-update" class="text-button">更新する</button><span class="muted"> 演習中は終了後に更新してください。</span></div>
-    <main id="main" tabindex="-1"><div class="loading"><span class="brand-mark">FP<span>2</span></span><p>問題データを読み込んでいます…</p></div></main>
+    <div class="study-workspace">
+      <main id="main" tabindex="-1"><div class="loading"><span class="brand-mark">FP<span>2</span></span><p>問題データを読み込んでいます…</p></div></main>
+      <aside id="memo-panel" class="memo-panel" aria-labelledby="memo-title" hidden>
+        <div class="memo-heading"><h2 id="memo-title">解答用メモ</h2><button id="memo-close" class="text-button" aria-label="メモを閉じる">閉じる</button></div>
+        <textarea id="answer-memo" aria-label="解答用メモ" spellcheck="false"></textarea>
+      </aside>
+    </div>
     <footer class="footer">FP2級 学習トレーナー <span>毎日の一問を、合格への一歩に。</span></footer>
   </div>
   <dialog id="confirm-dialog" aria-labelledby="dialog-title"><form method="dialog"><h2 id="dialog-title"></h2><p id="dialog-message"></p><div class="button-row"><button value="cancel" class="button secondary">キャンセル</button><button id="dialog-confirm" value="confirm" class="button primary">実行する</button></div></form></dialog>
-  <aside id="memo-panel" class="memo-panel" aria-labelledby="memo-title" hidden>
-    <div class="memo-heading"><h2 id="memo-title">解答用メモ</h2><button id="memo-close" class="text-button" aria-label="メモを閉じる">閉じる</button></div>
-    <label for="answer-memo" class="small">式や途中の計算を自由に記入</label>
-    <textarea id="answer-memo" aria-describedby="memo-help" placeholder="例：必要保障額 = 必要支出 − 準備資金" spellcheck="false"></textarea>
-    <p id="memo-help" class="small muted">問題・演習が変わっても保持します。同じタブの再読み込みにも対応。履歴バックアップには含みません。</p>
-  </aside>
   <noscript><p>このアプリを使うにはJavaScriptを有効にしてください。</p></noscript>
   <script type="module" src="./app.js"></script>
 </body>

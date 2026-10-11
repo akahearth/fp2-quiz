@@ -1,8 +1,8 @@
 // JSONを含むアプリ一式を同じ版で保存。ファイル変更時はCACHE_VERSIONを必ず上げる。
-const CACHE_VERSION = '2026-10-11-v6-300-memo';
+const CACHE_VERSION = '2026-10-11-v9-audit-300-final';
 const PREFIX = `fp2:${self.registration.scope}:`;
 const CACHE = PREFIX + CACHE_VERSION;
-const FILES = ['./', './index.html', './style.css', './app.js', './core.js', './memo.js', './questions.json', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
+const FILES = ['./', './index.html', './style.css', './app.js', './core.js', './memo.js', './questions.json', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png', './AUDIT.md', './AUDIT.json', './SOURCES.md'];
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);

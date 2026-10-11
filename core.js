@@ -198,7 +198,19 @@ export function loadState(storage, bank) {
   const state = JSON.parse(text);
   requireThat(objectOK(state) && state.schemaVersion === VERSION, '保存形式が対応していません。');
   const history = validateHistory(state.history);
-  try { return { history, active: validateActive(state.active, bank) }; }
+  try {
+    const active = validateActive(state.active, bank);
+    if (active) {
+      const byId = new Map(bank.questions.map(q => [q.id, q]));
+      const excluded = active.questions.some(q => byId.get(q.id)?.needsReview);
+      const revised = active.dataVersion !== bank.dataVersion && bank.lawBasisDate && active.questions.some(q => {
+        const current = byId.get(q.id);
+        return current && JSON.stringify([q.prompt, q.choices, q.correctChoiceId, q.correctReason]) !== JSON.stringify([current.prompt, current.choices, current.correctChoiceId, current.correctReason]);
+      });
+      if (excluded || revised) return { history, active: null, warning: '問題の検証・校正により、途中の演習に修正済みまたは要確認の問題が含まれています。最新の問題で演習を始め直してください。累計の学習履歴は保持しています。模試の未採点回答は累計に含まれません。' };
+    }
+    return { history, active };
+  }
   catch { return { history, active: null, warning: '途中の演習データを再開できませんでした。累計の学習履歴は保持しています。模試の未採点回答は累計に含まれません。' }; }
 }
 export function saveState(storage, history, active) {

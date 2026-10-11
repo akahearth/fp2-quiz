@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "dataVersion": "2026-10-11.1",
+  "taxonomySource": { "title": "日本FP協会 2級 試験範囲", "url": "https://www.jafp.or.jp/exam/subjects_02/" },
+  "fields": [
+    { "id": "life", "name": "ライフプランニングと資金計画", "shortName": "ライフプランニング", "units": [{ "id": "life-pension", "name": "公的年金" }, { "id": "life-funding", "name": "ライフプラン策定上の資金計画" }] },
+    { "id": "risk", "name": "リスク管理", "units": [{ "id": "risk-life", "name": "生命保険" }, { "id": "risk-property", "name": "損害保険" }] },
+    { "id": "finance", "name": "金融資産運用", "units": [{ "id": "finance-portfolio", "name": "ポートフォリオ運用" }, { "id": "finance-bond", "name": "債券投資" }] },
+    { "id": "tax", "name": "タックスプランニング", "units": [{ "id": "tax-deduction", "name": "所得控除" }, { "id": "tax-income", "name": "各種所得の内容" }] },
+    { "id": "estate", "name": "不動産", "units": [{ "id": "estate-regulation", "name": "不動産に関する法令上の規制" }, { "id": "estate-transaction", "name": "不動産の取引" }] },
+    { "id": "inheritance", "name": "相続・事業承継", "units": [{ "id": "inheritance-law", "name": "相続と法律" }, { "id": "inheritance-gift", "name": "贈与と税金" }] }
+  ],
+  "questions": [
+    {
+      "id": "life-001", "fieldId": "life", "unitId": "life-pension", "difficulty": "基礎",
+      "prompt": "日本の公的年金に加入する会社員について、国民年金と厚生年金保険の関係を最も適切に説明したものはどれか。",
+      "choices": [
+        { "id": "a", "text": "国民年金を基礎として、厚生年金保険にも加入する。", "explanation": "公的年金は基礎年金を1階、厚生年金を2階とする構造で、会社員は両方の制度に加入する。" },
+        { "id": "b", "text": "国民年金か厚生年金保険のどちらかを選んで加入する。", "explanation": "両者は任意に選ぶ代替制度ではない。厚生年金保険の加入者は国民年金にも加入する。" },
+        { "id": "c", "text": "厚生年金保険に加入すると、国民年金から脱退する。", "explanation": "厚生年金保険の加入は基礎年金からの脱退を意味しない。国民年金の第2号被保険者となる。" },
+        { "id": "d", "text": "国民年金に加入し、厚生年金保険は希望者だけが加入する。", "explanation": "適用事業所で加入要件を満たす会社員は、希望の有無で厚生年金保険への加入を選ぶことはできない。" }
+      ],
+      "correctChoiceId": "a", "correctReason": "会社員の年金を考えるときは、共通の基礎年金と、報酬等を反映する厚生年金を重ねて捉える。私的年金はこれらの公的制度とは別に位置付けられる。",
+      "sources": [{ "title": "日本年金機構 公的年金制度の種類と加入する制度", "url": "https://www.nenkin.go.jp/service/seidozenpan/20140710.html" }],
+      "basisDate": "2026-10-11", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "life-002", "fieldId": "life", "unitId": "life-funding", "difficulty": "基礎",
+      "prompt": "住宅ローンの全期間固定金利型について、金利の特徴として最も適切なものはどれか。金利引下げ特約などは考慮しない。",
+      "choices": [
+        { "id": "a", "text": "借入後も市場金利に合わせ、定期的に適用金利を見直す。", "explanation": "市場金利に応じて適用金利を見直すのは変動金利型の特徴である。" },
+        { "id": "b", "text": "借入時に、返済終了までの適用金利が確定する。", "explanation": "全期間固定金利型は、借入時点で返済期間全体の金利を確定する。" },
+        { "id": "c", "text": "当初の固定期間が終わると、適用金利を改めて選ぶ。", "explanation": "一定期間だけ固定した後に選択する仕組みは、固定金利期間選択型の特徴である。" },
+        { "id": "d", "text": "市場金利が下がると、契約中の適用金利も自動的に下がる。", "explanation": "市場金利が低下しても契約済みの固定金利は自動では下がらない。借換え等は別の判断となる。" }
+      ],
+      "correctChoiceId": "b", "correctReason": "固定金利は将来の金利上昇による返済負担の変化を抑え、資金計画を立てやすくする。借入後の市場金利低下を自動で享受する仕組みではない点も理解する。",
+      "sources": [{ "title": "住宅金融支援機構 フラット35の特徴", "url": "https://www.flat35.com/loan/lineup/flat35/index.html" }],
+      "basisDate": "2026-10-11", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "risk-001", "fieldId": "risk", "unitId": "risk-life", "difficulty": "基礎",
+      "prompt": "一般的な定期保険の基本的な仕組みとして、最も適切なものはどれか。特約は考慮しない。",
+      "choices": [
+        { "id": "a", "text": "死亡保障が一生涯続き、満期保険金は支払われない。", "explanation": "一生涯の死亡保障は終身保険の基本的な特徴である。定期保険の保障には期間がある。" },
+        { "id": "b", "text": "一定期間の死亡保障があり、満期時に満期保険金が支払われる。", "explanation": "死亡保障と満期保険金を組み合わせるのは養老保険の基本的な特徴である。" },
+        { "id": "c", "text": "一定期間の死亡保障があり、満期保険金は支払われない。", "explanation": "定期保険は定められた期間の死亡リスクに備える保険であり、満期保険金はない。" },
+        { "id": "d", "text": "生存中の年金給付を目的とし、死亡保障は設けられない。", "explanation": "定期保険は死亡保障を主な目的とする。老後の年金給付を主目的とする個人年金保険とは異なる。" }
+      ],
+      "correctChoiceId": "c", "correctReason": "保険を比較するときは、保障期間と満期時の給付を分けて考える。教育費や家族の生活費など、一定期間だけ大きな保障が必要な場面で定期保険を検討できる。",
+      "sources": [{ "title": "生命保険文化センター 定期保険", "url": "https://www.jili.or.jp/knows_learns/kind/main/41.html" }, { "title": "生命保険文化センター 今考えておく生命保険は？", "url": "https://www.jili.or.jp/files/workingadult/001.pdf" }],
+      "basisDate": "2026-10-11", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "risk-002", "fieldId": "risk", "unitId": "risk-property", "difficulty": "標準",
+      "prompt": "火災保険で用いられる「再調達価額」と「時価」の説明として、最も適切なものはどれか。",
+      "choices": [
+        { "id": "a", "text": "再調達価額は、購入時の価格から消耗分を差し引いた額である。", "explanation": "再調達価額は、同等の物を新たに建築・購入する費用である。購入時価格の減額とは異なる。" },
+        { "id": "b", "text": "時価は、同等の物を新たに建築・購入するための額である。", "explanation": "同等の物を新たに取得するための額は再調達価額を指す。時価は消耗分を考慮する。" },
+        { "id": "c", "text": "時価は、再調達価額に年月経過による消耗分を加えた額である。", "explanation": "経年による消耗は価値を下げるため、加算ではなく再調達価額から差し引く。" },
+        { "id": "d", "text": "時価は、再調達価額から年月経過による消耗分を差し引いた額である。", "explanation": "時価は、新たに同等の物を取得する費用から経年・使用による価値の減少を控除した額である。" }
+      ],
+      "correctChoiceId": "d", "correctReason": "保険金額を決める際は、どの評価基準で契約するかを確認する。建て直しの費用と経年後の資産価値は異なるため、評価基準によって補償額も変わり得る。",
+      "sources": [{ "title": "日本損害保険協会 火災保険（契約金額の設定方法）", "url": "https://www.sonpo.or.jp/insurance/kasai/" }],
+      "basisDate": "2026-10-11", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "finance-001", "fieldId": "finance", "unitId": "finance-portfolio", "difficulty": "基礎",
+      "prompt": "金融資産の分散投資について、最も適切な説明はどれか。",
+      "choices": [
+        { "id": "a", "text": "値動きの異なる資産を組み合わせ、全体の価格変動を抑えることを目指す。", "explanation": "複数の資産の値動きが互いに補い合うことにより、全体の変動を抑える効果が期待できる。" },
+        { "id": "b", "text": "値動きの似た資産だけを組み合わせ、分散効果を高めることを目指す。", "explanation": "同じように動く資産だけでは同時に値下がりしやすく、値動きの異なる資産を組み合わせる効果は得にくい。" },
+        { "id": "c", "text": "同一の株式を複数の証券会社で保有し、企業固有のリスクを抑える。", "explanation": "窓口を分けても投資先が同じ企業なら、その企業の業績などに伴うリスクは分散できない。" },
+        { "id": "d", "text": "複数の資産に分けて投資すれば、元本割れを防ぐことができる。", "explanation": "分散はリスクの軽減を目指す手法であり、元本保証ではない。複数の資産が同時に下落することもある。" }
+      ],
+      "correctChoiceId": "a", "correctReason": "分散では投資先の数だけでなく、値動きの関係に着目する。価格変動の軽減は期待できるが、損失の可能性を消すことはできない。",
+      "sources": [{ "title": "金融庁 資産形成の基本（分散投資）", "url": "https://www.fsa.go.jp/policy/nisa2/invest/index.html" }],
+      "basisDate": "2026-10-11", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "finance-002", "fieldId": "finance", "unitId": "finance-bond", "difficulty": "標準",
+      "prompt": "他の条件が変わらないとき、市場金利の上昇は、すでに発行されている固定利付債券の市場価格に一般にどのような影響を与えるか。",
+      "choices": [
+        { "id": "a", "text": "固定利付債券の市場価格は、一般に上昇する。", "explanation": "金利が上がると、新たに発行される債券と比べ既発債の固定利息の魅力が低下し、価格は下がる方向に動く。" },
+        { "id": "b", "text": "固定利付債券の市場価格は、一般に下落する。", "explanation": "市場金利と既発の固定利付債券の価格は、一般に逆方向に動く。" },
+        { "id": "c", "text": "固定利付債券の市場価格は、額面で一定となる。", "explanation": "利息が固定でも売買価格は固定ではない。途中売却は市場価格で行うため、価格変動リスクがある。" },
+        { "id": "d", "text": "固定利付債券の市場価格は、償還日までは変動しない。", "explanation": "満期前でも市場金利等を反映して価格が変動する。償還時の額面と途中の売買価格を区別する。" }
+      ],
+      "correctChoiceId": "b", "correctReason": "同じ固定利息を受け取る債券でも、市場が求める利回りが上がれば、購入価格が低くなることで利回りが調整される。発行体の信用状況等も価格の別の変動要因となる。",
+      "sources": [{ "title": "日本証券業協会 個人向け社債の特徴やリスク、価格情報の入手方法", "url": "https://www.jsda.or.jp/about/hatten/risk/shasai/index.html" }],
+      "basisDate": "2026-10-11", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "tax-001", "fieldId": "tax", "unitId": "tax-deduction", "difficulty": "基礎",
+      "prompt": "所得税における「所得控除」と「税額控除」の違いについて、最も適切なものはどれか。",
+      "choices": [
+        { "id": "a", "text": "所得控除も税額控除も、算出した所得税額から差し引く。", "explanation": "所得控除は所得金額から差し引く。税額から直接差し引く税額控除とは計算段階が異なる。" },
+        { "id": "b", "text": "所得控除は税額から、税額控除は所得金額から差し引く。", "explanation": "説明が逆である。所得控除が所得金額、税額控除が算出した税額に対して適用される。" },
+        { "id": "c", "text": "所得控除は所得金額から、税額控除は算出した税額から差し引く。", "explanation": "所得控除は課税所得を求める段階、税額控除は税額を求めた後の段階で差し引く。" },
+        { "id": "d", "text": "所得控除も税額控除も、所得金額から差し引く。", "explanation": "税額控除は課税所得金額に税率を適用して計算した税額から差し引くため、この説明は誤りである。" }
+      ],
+      "correctChoiceId": "c", "correctReason": "所得控除は個人の事情等を課税所得に反映する仕組みであり、税額控除は税額自体を調整する仕組みである。控除額が同じでも税額への影響が同じとは限らない。",
+      "sources": [{ "title": "国税庁 No.1100 所得控除のあらまし", "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1100.htm" }, { "title": "国税庁 No.1200 税額控除", "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1200.htm" }],
+      "basisDate": "2026-04-01", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "tax-002", "fieldId": "tax", "unitId": "tax-income", "difficulty": "標準",
+      "prompt": "賃貸用住宅の貸付けによる総収入金額が年間240万円、その収入を得るために直接必要な経費が年間80万円である。他の収入・経費や特例を考慮しない場合、不動産所得の金額はいくらか。",
+      "choices": [
+        { "id": "a", "text": "80万円", "explanation": "80万円は必要経費の額であり、不動産所得の金額ではない。総収入から経費を引いて求める。" },
+        { "id": "b", "text": "240万円", "explanation": "240万円は総収入金額である。不動産所得を計算するには必要経費を差し引く。" },
+        { "id": "c", "text": "320万円", "explanation": "収入に経費を加算している。必要経費は収入から差し引くため、加算はしない。" },
+        { "id": "d", "text": "160万円", "explanation": "不動産所得は総収入金額240万円から必要経費80万円を差し引いた160万円となる。" }
+      ],
+      "correctChoiceId": "d", "correctReason": "収入と所得は区別する。不動産所得は貸付けによる収入から必要経費を控除して求める。家事上の費用は必要経費にできず、所得控除はこの計算とは別の段階で扱う。",
+      "sources": [{ "title": "国税庁 No.1370 不動産収入を受け取ったとき（不動産所得）", "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1370.htm" }],
+      "basisDate": "2026-04-01", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "estate-001", "fieldId": "estate", "unitId": "estate-regulation", "difficulty": "標準",
+      "prompt": "敷地面積が200㎡、適用される建ぺい率の上限が60％の敷地で、建ぺい率だけから求める建築面積の上限はいくらか。角地等の緩和や他の制限は考慮しない。",
+      "choices": [
+        { "id": "a", "text": "120㎡", "explanation": "建ぺい率は建築面積を敷地面積で割った割合であり、200㎡×60％＝120㎡となる。" },
+        { "id": "b", "text": "60㎡", "explanation": "60％という割合をそのまま面積とした値である。割合に敷地面積を掛ける必要がある。" },
+        { "id": "c", "text": "200㎡", "explanation": "敷地面積と同じ建築面積では建ぺい率100％となり、問題の上限60％を超える。" },
+        { "id": "d", "text": "約333㎡", "explanation": "敷地面積を60％で割った値である。建築面積を求めるときは敷地面積に建ぺい率を掛ける。" }
+      ],
+      "correctChoiceId": "a", "correctReason": "建ぺい率は敷地に対する建築面積の割合で、延べ面積の割合を示す容積率とは異なる。実際の建築では高さや道路などの制限もあわせて確認する。",
+      "sources": [{ "title": "横浜市 建ぺい率（建築基準法第53条）", "url": "https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf" }],
+      "basisDate": "2026-10-11", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "estate-002", "fieldId": "estate", "unitId": "estate-transaction", "difficulty": "基礎",
+      "prompt": "不動産を購入する前に、登記事項証明書等を利用する主な目的として最も適切なものはどれか。",
+      "choices": [
+        { "id": "a", "text": "建物の耐震性能を確認し、将来の修繕費用を確定する。", "explanation": "登記は耐震性能の診断書ではなく、将来の修繕費用を確定する資料でもない。別途調査が必要となる。" },
+        { "id": "b", "text": "登記された所有者や、抵当権などの権利関係を確認する。", "explanation": "不動産登記は所在・面積や権利関係を公示する制度であり、所有者や抵当権等の調査に用いる。" },
+        { "id": "c", "text": "現在の市場価格を確認し、その価格での売却を保証する。", "explanation": "登記情報は不動産の売却価格を保証しない。市場価格は取引事例や物件の状況等から別に検討する。" },
+        { "id": "d", "text": "入居者の生活状況を確認し、家賃の滞納がないことを証明する。", "explanation": "入居者の生活状況や家賃支払状況は登記事項ではない。賃貸借契約や支払記録等を別に確認する。" }
+      ],
+      "correctChoiceId": "b", "correctReason": "取引前は現地の状況と公示された権利関係を両方調べる。登記簿は重要な資料だが、そこに記載されない物理的状態や収益性まで証明するものではない。",
+      "sources": [{ "title": "法務省 不動産登記のABC", "url": "https://www.moj.go.jp/MINJI/minji02.html" }],
+      "basisDate": "2026-10-11", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "inheritance-001", "fieldId": "inheritance", "unitId": "inheritance-law", "difficulty": "標準",
+      "prompt": "被相続人の相続人が法律上の配偶者と子2人だけである。相続放棄等はないものとすると、配偶者と子1人あたりの法定相続分の組合せとして最も適切なものはどれか。",
+      "choices": [
+        { "id": "a", "text": "配偶者：3分の1、子1人あたり：3分の1", "explanation": "人数だけで均等に分けるのではない。配偶者と子の場合、配偶者は2分の1、子全体で2分の1となる。" },
+        { "id": "b", "text": "配偶者：3分の2、子1人あたり：6分の1", "explanation": "配偶者が3分の2となるのは配偶者と直系尊属が相続人となる場合である。子との相続には当てはまらない。" },
+        { "id": "c", "text": "配偶者：2分の1、子1人あたり：4分の1", "explanation": "配偶者が2分の1、子全体が2分の1である。子2人で均等に分け、各4分の1となる。" },
+        { "id": "d", "text": "配偶者：4分の3、子1人あたり：8分の1", "explanation": "配偶者が4分の3となるのは配偶者と兄弟姉妹が相続人となる場合である。子との相続ではない。" }
+      ],
+      "correctChoiceId": "c", "correctReason": "まず配偶者と同時に相続する親族の種類を確認し、親族側の相続分をその人数で分ける。法定相続分は、相続人全員の合意による別の遺産分割を禁止するものではない。",
+      "sources": [{ "title": "国税庁 No.4132 相続人の範囲と法定相続分", "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm" }],
+      "basisDate": "2026-04-01", "lastVerified": "2026-10-11", "needsReview": false
+    },
+    {
+      "id": "inheritance-002", "fieldId": "inheritance", "unitId": "inheritance-gift", "difficulty": "標準",
+      "prompt": "暦年課税による贈与税について、その年の基礎控除額110万円を差し引く前の贈与財産の価額は、原則としてどのように集計するか。非課税財産や特例は考慮しない。",
+      "choices": [
+        { "id": "a", "text": "贈与した人ごとに、受け取った人の1年間の贈与を分けて集計する。", "explanation": "暦年課税は受贈者ごとの年間合計で考える。同じ年に複数人から受けた贈与も合算する。" },
+        { "id": "b", "text": "贈与1回ごとに、受け取った人の贈与財産を分けて集計する。", "explanation": "基礎控除を贈与の回数ごとに適用することはできない。その年の贈与財産の価額を合算する。" },
+        { "id": "c", "text": "贈与した人の世帯ごとに、贈与した財産の1年間の合計を集計する。", "explanation": "贈与者の世帯単位では計算しない。財産を受け取った人それぞれについて年間合計を求める。" },
+        { "id": "d", "text": "受け取った人ごとに、その年に受けた贈与財産の価額を合計する。", "explanation": "暦年課税では、受贈者が1月1日から12月31日までに受けた贈与の価額を合計し、基礎控除を差し引く。" }
+      ],
+      "correctChoiceId": "d", "correctReason": "暦年課税の計算単位は受贈者と暦年である。誰から何回もらったかで基礎控除が増えるわけではない。相続時精算課税は異なる制度なので区別して学ぶ。",
+      "sources": [{ "title": "国税庁 No.4402 贈与税がかかる場合", "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4402.htm" }, { "title": "国税庁 贈与税の申告をされる方へ", "url": "https://www.nta.go.jp/taxes/shiraberu/shinkoku/tokushu/keisubetsu/zouyozei.htm" }],
+      "basisDate": "2026-04-01", "lastVerified": "2026-10-11", "needsReview": false
+    }
+  ]
+}

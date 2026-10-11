@@ -1,0 +1,7 @@
+{
+  "name": "fp2-study-trainer",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "test": "node --test tests/core.test.js tests/pwa.test.js tests/expansion.test.js tests/memo.test.js" }
+}

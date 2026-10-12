@@ -53,7 +53,7 @@ Safariタブとホーム画面PWAの保存場所が異なる可能性があり�
 
 公開URL、sw.jsのURL、scopeを維持します。アプリ再追加、SW登録解除、Webサイトデータ消去、履歴初期化は更新手順に含めません。
 
-既存旧版の最初の移行は、旧コードとブラウザ自身の更新確認で新版SWを取得し、旧版にもある通知で切り替えます。新版は大量の画像をinstallの前提にしないため、旧一括取得の失敗条件を減らします。旧版で通知を取り逃した場合は、アプリを削除せず一度終了し、同じホーム画面アイコンから起動します。今回の版へ移行後は、起動・復帰・手動確認を利用できます。
+既存旧版の最初の移行は、旧コードとブラウザ自身の更新確認で新版SWを取得し、両級の演習・過去問を終了してから、旧版にもある通知で切り替えます。新版は大量の画像をinstallの前提にしないため、旧一括取得の失敗条件を減らします。旧版で通知を取り逃した場合は、アプリを削除せず一度終了し、同じホーム画面アイコンから起動します。今回の版へ移行後は、起動・復帰・手動確認を利用できます。
 
 閉じたアプリに強制実行したり、全端末へ即時反映したりすることはできません。初回の移行は端末の通信、iOSの更新確認タイミング、PagesデプロイとCDNの反映に依存します。Safariだけの再読み込みではホーム画面PWAの更新を代行できるとは扱いません。
 
@@ -110,3 +110,11 @@ Settings → Pagesでmain / (root)が公開元であること、ActionsのPages�
 - [Service Workers仕様：update・waiting・skipWaiting](https://w3c.github.io/ServiceWorker/)
 - [WebKit：保存領域とホーム画面WebアプリのStorage API](https://webkit.org/blog/14403/updates-to-storage-policy/)
 - [GitHub Pagesの公開元設定](https://docs.github.com/ja/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+
+## 公開後の確認
+
+2026年10月12日、修正コミット d4bb0ce のmainへのプッシュとGitHub Pagesのデプロイ成功を確認しました。
+[デプロイ結果](https://github.com/akahearth/fp2-quiz/actions/runs/38218612267)
+
+公開先のsw.jsおよび必須17ファイルを再取得し、検証済みローカルファイルとのSHA-256一致を確認しています。配信版は v1.5.0-8712c12c0cf9 です。これは公開されたファイルの確認であり、他の利用者のiPhoneに既に切り替わったことを確認したものではありません。

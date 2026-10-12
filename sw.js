@@ -1,35 +1,115 @@
-// JSONを含むアプリ一式を同じ版で保存。ファイル変更時はCACHE_VERSIONを必ず上げる。
-const CACHE_VERSION = '2026-10-12-v19-past-three-sets';
+// 公開するたびに同じURLのこのファイルとversion.jsonの版を更新する。
+const CACHE_VERSION = 'v1.5.0-8712c12c0cf9';
 const PREFIX = `fp2:${self.registration.scope}:`;
-const CACHE = PREFIX + CACHE_VERSION;
-const FILES = ["./","./index.html","./style.css","./app.js","./core.js","./grades.js","./memo.js","./questions.json","./questions-fp3.json","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./AUDIT.md","./AUDIT.json","./SOURCES.md","./AUDIT-FP3.md","./AUDIT-FP3.json","./SOURCES-FP3.md","./past.js","./past-exams.json","./PAST-EXAMS.md","./REVISION.md","./REVISION.json","./past-exams/fp2-202605-questions.pdf","./past-exams/fp2-202605-q01-1.png","./past-exams/fp2-202605-q02-1.png","./past-exams/fp2-202605-q03-1.png","./past-exams/fp2-202605-q04-1.png","./past-exams/fp2-202605-q05-1.png","./past-exams/fp2-202605-q06-1.png","./past-exams/fp2-202605-q07-1.png","./past-exams/fp2-202605-q08-1.png","./past-exams/fp2-202605-q09-1.png","./past-exams/fp2-202605-q10-1.png","./past-exams/fp2-202605-q11-1.png","./past-exams/fp2-202605-q12-1.png","./past-exams/fp2-202605-q13-1.png","./past-exams/fp2-202605-q14-1.png","./past-exams/fp2-202605-q15-1.png","./past-exams/fp2-202605-q16-1.png","./past-exams/fp2-202605-q17-1.png","./past-exams/fp2-202605-q18-1.png","./past-exams/fp2-202605-q19-1.png","./past-exams/fp2-202605-q20-1.png","./past-exams/fp2-202605-q21-1.png","./past-exams/fp2-202605-q22-1.png","./past-exams/fp2-202605-q23-1.png","./past-exams/fp2-202605-q24-1.png","./past-exams/fp2-202605-q25-1.png","./past-exams/fp2-202605-q26-1.png","./past-exams/fp2-202605-q27-1.png","./past-exams/fp2-202605-q28-1.png","./past-exams/fp2-202605-q29-1.png","./past-exams/fp2-202605-q30-1.png","./past-exams/fp2-202605-q31-1.png","./past-exams/fp2-202605-q32-1.png","./past-exams/fp2-202605-q33-1.png","./past-exams/fp2-202605-q34-1.png","./past-exams/fp2-202605-q35-1.png","./past-exams/fp2-202605-q36-1.png","./past-exams/fp2-202605-q37-1.png","./past-exams/fp2-202605-q38-1.png","./past-exams/fp2-202605-q39-1.png","./past-exams/fp2-202605-q40-1.png","./past-exams/fp2-202605-q41-1.png","./past-exams/fp2-202605-q42-1.png","./past-exams/fp2-202605-q43-1.png","./past-exams/fp2-202605-q44-1.png","./past-exams/fp2-202605-q45-1.png","./past-exams/fp2-202605-q46-1.png","./past-exams/fp2-202605-q47-1.png","./past-exams/fp2-202605-q48-1.png","./past-exams/fp2-202605-q49-1.png","./past-exams/fp2-202605-q50-1.png","./past-exams/fp2-202605-q51-1.png","./past-exams/fp2-202605-q52-1.png","./past-exams/fp2-202605-q53-1.png","./past-exams/fp2-202605-q54-1.png","./past-exams/fp2-202605-q55-1.png","./past-exams/fp2-202605-q56-1.png","./past-exams/fp2-202605-q57-1.png","./past-exams/fp2-202605-q58-1.png","./past-exams/fp2-202605-q59-1.png","./past-exams/fp2-202605-q60-1.png","./past-exams/fp2-202505-questions.pdf","./past-exams/fp2-202505-q01-1.png","./past-exams/fp2-202505-q02-1.png","./past-exams/fp2-202505-q03-1.png","./past-exams/fp2-202505-q04-1.png","./past-exams/fp2-202505-q05-1.png","./past-exams/fp2-202505-q06-1.png","./past-exams/fp2-202505-q07-1.png","./past-exams/fp2-202505-q08-1.png","./past-exams/fp2-202505-q09-1.png","./past-exams/fp2-202505-q10-1.png","./past-exams/fp2-202505-q11-1.png","./past-exams/fp2-202505-q12-1.png","./past-exams/fp2-202505-q13-1.png","./past-exams/fp2-202505-q14-1.png","./past-exams/fp2-202505-q15-1.png","./past-exams/fp2-202505-q16-1.png","./past-exams/fp2-202505-q17-1.png","./past-exams/fp2-202505-q18-1.png","./past-exams/fp2-202505-q19-1.png","./past-exams/fp2-202505-q20-1.png","./past-exams/fp2-202505-q21-1.png","./past-exams/fp2-202505-q22-1.png","./past-exams/fp2-202505-q23-1.png","./past-exams/fp2-202505-q24-1.png","./past-exams/fp2-202505-q25-1.png","./past-exams/fp2-202505-q26-1.png","./past-exams/fp2-202505-q27-1.png","./past-exams/fp2-202505-q28-1.png","./past-exams/fp2-202505-q29-1.png","./past-exams/fp2-202505-q30-1.png","./past-exams/fp2-202505-q31-1.png","./past-exams/fp2-202505-q32-1.png","./past-exams/fp2-202505-q33-1.png","./past-exams/fp2-202505-q34-1.png","./past-exams/fp2-202505-q35-1.png","./past-exams/fp2-202505-q36-1.png","./past-exams/fp2-202505-q37-1.png","./past-exams/fp2-202505-q38-1.png","./past-exams/fp2-202505-q39-1.png","./past-exams/fp2-202505-q40-1.png","./past-exams/fp2-202505-q41-1.png","./past-exams/fp2-202505-q42-1.png","./past-exams/fp2-202505-q43-1.png","./past-exams/fp2-202505-q44-1.png","./past-exams/fp2-202505-q45-1.png","./past-exams/fp2-202505-q46-1.png","./past-exams/fp2-202505-q47-1.png","./past-exams/fp2-202505-q48-1.png","./past-exams/fp2-202505-q49-1.png","./past-exams/fp2-202505-q50-1.png","./past-exams/fp2-202505-q51-1.png","./past-exams/fp2-202505-q52-1.png","./past-exams/fp2-202505-q53-1.png","./past-exams/fp2-202505-q54-1.png","./past-exams/fp2-202505-q55-1.png","./past-exams/fp2-202505-q56-1.png","./past-exams/fp2-202505-q57-1.png","./past-exams/fp2-202505-q58-1.png","./past-exams/fp2-202505-q59-1.png","./past-exams/fp2-202505-q60-1.png","./past-exams/fp2-202501-questions.pdf","./past-exams/fp2-202501-q01-1.png","./past-exams/fp2-202501-q02-1.png","./past-exams/fp2-202501-q03-1.png","./past-exams/fp2-202501-q04-1.png","./past-exams/fp2-202501-q05-1.png","./past-exams/fp2-202501-q06-1.png","./past-exams/fp2-202501-q07-1.png","./past-exams/fp2-202501-q08-1.png","./past-exams/fp2-202501-q09-1.png","./past-exams/fp2-202501-q10-1.png","./past-exams/fp2-202501-q11-1.png","./past-exams/fp2-202501-q12-1.png","./past-exams/fp2-202501-q13-1.png","./past-exams/fp2-202501-q14-1.png","./past-exams/fp2-202501-q15-1.png","./past-exams/fp2-202501-q16-1.png","./past-exams/fp2-202501-q17-1.png","./past-exams/fp2-202501-q18-1.png","./past-exams/fp2-202501-q19-1.png","./past-exams/fp2-202501-q20-1.png","./past-exams/fp2-202501-q21-1.png","./past-exams/fp2-202501-q22-1.png","./past-exams/fp2-202501-q23-1.png","./past-exams/fp2-202501-q24-1.png","./past-exams/fp2-202501-q25-1.png","./past-exams/fp2-202501-q26-1.png","./past-exams/fp2-202501-q27-1.png","./past-exams/fp2-202501-q28-1.png","./past-exams/fp2-202501-q29-1.png","./past-exams/fp2-202501-q30-1.png","./past-exams/fp2-202501-q31-1.png","./past-exams/fp2-202501-q32-1.png","./past-exams/fp2-202501-q33-1.png","./past-exams/fp2-202501-q34-1.png","./past-exams/fp2-202501-q35-1.png","./past-exams/fp2-202501-q36-1.png","./past-exams/fp2-202501-q37-1.png","./past-exams/fp2-202501-q38-1.png","./past-exams/fp2-202501-q39-1.png","./past-exams/fp2-202501-q40-1.png","./past-exams/fp2-202501-q41-1.png","./past-exams/fp2-202501-q42-1.png","./past-exams/fp2-202501-q43-1.png","./past-exams/fp2-202501-q44-1.png","./past-exams/fp2-202501-q45-1.png","./past-exams/fp2-202501-q46-1.png","./past-exams/fp2-202501-q47-1.png","./past-exams/fp2-202501-q48-1.png","./past-exams/fp2-202501-q49-1.png","./past-exams/fp2-202501-q50-1.png","./past-exams/fp2-202501-q51-1.png","./past-exams/fp2-202501-q52-1.png","./past-exams/fp2-202501-q53-1.png","./past-exams/fp2-202501-q54-1.png","./past-exams/fp2-202501-q55-1.png","./past-exams/fp2-202501-q56-1.png","./past-exams/fp2-202501-q57-1.png","./past-exams/fp2-202501-q58-1.png","./past-exams/fp2-202501-q59-1.png","./past-exams/fp2-202501-q60-1.png","./past-exams/fp3-202605-questions.pdf","./past-exams/fp3-202605-q01-1.png","./past-exams/fp3-202605-q02-1.png","./past-exams/fp3-202605-q03-1.png","./past-exams/fp3-202605-q04-1.png","./past-exams/fp3-202605-q05-1.png","./past-exams/fp3-202605-q06-1.png","./past-exams/fp3-202605-q07-1.png","./past-exams/fp3-202605-q08-1.png","./past-exams/fp3-202605-q09-1.png","./past-exams/fp3-202605-q10-1.png","./past-exams/fp3-202605-q11-1.png","./past-exams/fp3-202605-q12-1.png","./past-exams/fp3-202605-q13-1.png","./past-exams/fp3-202605-q14-1.png","./past-exams/fp3-202605-q15-1.png","./past-exams/fp3-202605-q16-1.png","./past-exams/fp3-202605-q17-1.png","./past-exams/fp3-202605-q18-1.png","./past-exams/fp3-202605-q19-1.png","./past-exams/fp3-202605-q20-1.png","./past-exams/fp3-202605-q21-1.png","./past-exams/fp3-202605-q22-1.png","./past-exams/fp3-202605-q23-1.png","./past-exams/fp3-202605-q24-1.png","./past-exams/fp3-202605-q25-1.png","./past-exams/fp3-202605-q26-1.png","./past-exams/fp3-202605-q27-1.png","./past-exams/fp3-202605-q28-1.png","./past-exams/fp3-202605-q29-1.png","./past-exams/fp3-202605-q30-1.png","./past-exams/fp3-202605-q31-1.png","./past-exams/fp3-202605-q32-1.png","./past-exams/fp3-202605-q33-1.png","./past-exams/fp3-202605-q34-1.png","./past-exams/fp3-202605-q35-1.png","./past-exams/fp3-202605-q36-1.png","./past-exams/fp3-202605-q37-1.png","./past-exams/fp3-202605-q38-1.png","./past-exams/fp3-202605-q39-1.png","./past-exams/fp3-202605-q40-1.png","./past-exams/fp3-202605-q41-1.png","./past-exams/fp3-202605-q42-1.png","./past-exams/fp3-202605-q43-1.png","./past-exams/fp3-202605-q44-1.png","./past-exams/fp3-202605-q45-1.png","./past-exams/fp3-202605-q46-1.png","./past-exams/fp3-202605-q47-1.png","./past-exams/fp3-202605-q48-1.png","./past-exams/fp3-202605-q49-1.png","./past-exams/fp3-202605-q50-1.png","./past-exams/fp3-202605-q51-1.png","./past-exams/fp3-202605-q52-1.png","./past-exams/fp3-202605-q53-1.png","./past-exams/fp3-202605-q54-1.png","./past-exams/fp3-202605-q55-1.png","./past-exams/fp3-202605-q56-1.png","./past-exams/fp3-202605-q57-1.png","./past-exams/fp3-202605-q58-1.png","./past-exams/fp3-202605-q59-1.png","./past-exams/fp3-202605-q60-1.png","./past-exams/fp3-202505-questions.pdf","./past-exams/fp3-202505-q01-1.png","./past-exams/fp3-202505-q02-1.png","./past-exams/fp3-202505-q03-1.png","./past-exams/fp3-202505-q04-1.png","./past-exams/fp3-202505-q05-1.png","./past-exams/fp3-202505-q06-1.png","./past-exams/fp3-202505-q07-1.png","./past-exams/fp3-202505-q08-1.png","./past-exams/fp3-202505-q09-1.png","./past-exams/fp3-202505-q10-1.png","./past-exams/fp3-202505-q11-1.png","./past-exams/fp3-202505-q12-1.png","./past-exams/fp3-202505-q13-1.png","./past-exams/fp3-202505-q14-1.png","./past-exams/fp3-202505-q15-1.png","./past-exams/fp3-202505-q16-1.png","./past-exams/fp3-202505-q17-1.png","./past-exams/fp3-202505-q18-1.png","./past-exams/fp3-202505-q19-1.png","./past-exams/fp3-202505-q20-1.png","./past-exams/fp3-202505-q21-1.png","./past-exams/fp3-202505-q22-1.png","./past-exams/fp3-202505-q23-1.png","./past-exams/fp3-202505-q24-1.png","./past-exams/fp3-202505-q25-1.png","./past-exams/fp3-202505-q26-1.png","./past-exams/fp3-202505-q27-1.png","./past-exams/fp3-202505-q28-1.png","./past-exams/fp3-202505-q29-1.png","./past-exams/fp3-202505-q30-1.png","./past-exams/fp3-202505-q31-1.png","./past-exams/fp3-202505-q32-1.png","./past-exams/fp3-202505-q33-1.png","./past-exams/fp3-202505-q34-1.png","./past-exams/fp3-202505-q35-1.png","./past-exams/fp3-202505-q36-1.png","./past-exams/fp3-202505-q37-1.png","./past-exams/fp3-202505-q38-1.png","./past-exams/fp3-202505-q39-1.png","./past-exams/fp3-202505-q40-1.png","./past-exams/fp3-202505-q41-1.png","./past-exams/fp3-202505-q42-1.png","./past-exams/fp3-202505-q43-1.png","./past-exams/fp3-202505-q44-1.png","./past-exams/fp3-202505-q45-1.png","./past-exams/fp3-202505-q46-1.png","./past-exams/fp3-202505-q47-1.png","./past-exams/fp3-202505-q48-1.png","./past-exams/fp3-202505-q49-1.png","./past-exams/fp3-202505-q50-1.png","./past-exams/fp3-202505-q51-1.png","./past-exams/fp3-202505-q52-1.png","./past-exams/fp3-202505-q53-1.png","./past-exams/fp3-202505-q54-1.png","./past-exams/fp3-202505-q55-1.png","./past-exams/fp3-202505-q56-1.png","./past-exams/fp3-202505-q57-1.png","./past-exams/fp3-202505-q58-1.png","./past-exams/fp3-202505-q59-1.png","./past-exams/fp3-202505-q60-1.png","./past-exams/fp3-202405-questions.pdf","./past-exams/fp3-202405-q01-1.png","./past-exams/fp3-202405-q02-1.png","./past-exams/fp3-202405-q03-1.png","./past-exams/fp3-202405-q04-1.png","./past-exams/fp3-202405-q05-1.png","./past-exams/fp3-202405-q06-1.png","./past-exams/fp3-202405-q07-1.png","./past-exams/fp3-202405-q08-1.png","./past-exams/fp3-202405-q09-1.png","./past-exams/fp3-202405-q10-1.png","./past-exams/fp3-202405-q11-1.png","./past-exams/fp3-202405-q12-1.png","./past-exams/fp3-202405-q13-1.png","./past-exams/fp3-202405-q14-1.png","./past-exams/fp3-202405-q15-1.png","./past-exams/fp3-202405-q16-1.png","./past-exams/fp3-202405-q17-1.png","./past-exams/fp3-202405-q18-1.png","./past-exams/fp3-202405-q19-1.png","./past-exams/fp3-202405-q20-1.png","./past-exams/fp3-202405-q21-1.png","./past-exams/fp3-202405-q22-1.png","./past-exams/fp3-202405-q23-1.png","./past-exams/fp3-202405-q24-1.png","./past-exams/fp3-202405-q25-1.png","./past-exams/fp3-202405-q26-1.png","./past-exams/fp3-202405-q27-1.png","./past-exams/fp3-202405-q28-1.png","./past-exams/fp3-202405-q29-1.png","./past-exams/fp3-202405-q30-1.png","./past-exams/fp3-202405-q31-1.png","./past-exams/fp3-202405-q32-1.png","./past-exams/fp3-202405-q33-1.png","./past-exams/fp3-202405-q34-1.png","./past-exams/fp3-202405-q35-1.png","./past-exams/fp3-202405-q36-1.png","./past-exams/fp3-202405-q37-1.png","./past-exams/fp3-202405-q38-1.png","./past-exams/fp3-202405-q39-1.png","./past-exams/fp3-202405-q40-1.png","./past-exams/fp3-202405-q41-1.png","./past-exams/fp3-202405-q42-1.png","./past-exams/fp3-202405-q43-1.png","./past-exams/fp3-202405-q44-1.png","./past-exams/fp3-202405-q45-1.png","./past-exams/fp3-202405-q46-1.png","./past-exams/fp3-202405-q47-1.png","./past-exams/fp3-202405-q48-1.png","./past-exams/fp3-202405-q49-1.png","./past-exams/fp3-202405-q50-1.png","./past-exams/fp3-202405-q51-1.png","./past-exams/fp3-202405-q52-1.png","./past-exams/fp3-202405-q53-1.png","./past-exams/fp3-202405-q54-1.png","./past-exams/fp3-202405-q55-1.png","./past-exams/fp3-202405-q56-1.png","./past-exams/fp3-202405-q57-1.png","./past-exams/fp3-202405-q58-1.png","./past-exams/fp3-202405-q59-1.png","./past-exams/fp3-202405-q60-1.png"];
+const CACHE = PREFIX + 'shell:' + CACHE_VERSION;
+const CONTENT_CACHE = PREFIX + 'content:v1';
+const FILES = ['./index.html','./style.css','./app.js','./core.js','./grades.js','./memo.js','./pwa.js','./past.js','./questions.json','./questions-fp3.json','./past-exams.json','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png','./version.json','./content-manifest.json'];
+const absolute = path => new URL(path, self.registration.scope).href;
+let manifestPromise;
+function manifest() {
+  if (!manifestPromise) manifestPromise = caches.open(CACHE).then(cache => cache.match(absolute('./content-manifest.json'))).then(async response => {
+    if (!response) throw new Error('追加コンテンツの一覧を取得できません。');
+    const data = await response.json();
+    if (data.release !== CACHE_VERSION) throw new Error('公開ファイルの版が一致していません。');
+    return data.assets;
+  }).catch(error => { manifestPromise = null; throw error; });
+  return manifestPromise;
+}
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
-    const cache = await caches.open(CACHE);
-    // ブラウザのHTTPキャッシュを避け、全ファイル成功時のみインストール完了。
-    await cache.addAll(FILES.map(path => new Request(new URL(path, self.registration.scope), { cache: 'reload' })));
-    // 待機して既存の演習を守る。初回のみ通常のライフサイクルで有効化する。
+    try {
+      const cache = await caches.open(CACHE);
+      await cache.addAll(FILES.map(path => new Request(absolute(path), {cache:'reload'})));
+      const version = await (await cache.match(absolute('./version.json'))).json();
+      if (version.release !== CACHE_VERSION) throw new Error('公開版が一致していません。');
+      await manifest();
+      // 自動でskipWaitingしない。現在の演習を続けられる待機状態へ進む。
+    } catch (error) {
+      await caches.delete(CACHE); // 失敗した新しいキャッシュだけを破棄。旧版・学習記録には触れない。
+      throw error;
+    }
   })());
 });
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
-    await Promise.all(keys.filter(key => key.startsWith(PREFIX) && key !== CACHE).map(key => caches.delete(key)));
+    // 前の必須キャッシュを1版保持。旧一括キャッシュも残し、画像・PDFを必要時に検証して再利用する。
+    const oldShells = keys.filter(key => key.startsWith(PREFIX+'shell:') && key !== CACHE);
+    await Promise.all(oldShells.slice(0,-1).map(key => caches.delete(key)));
     await self.clients.claim();
   })());
 });
-self.addEventListener('message', event => { if (event.data?.type === 'ACTIVATE_UPDATE') self.skipWaiting(); });
+const assetKey = asset => absolute(asset.url) + '?asset=' + asset.sha256;
+async function valid(response, asset) {
+  if (!response?.ok) return false;
+  const bytes = await response.clone().arrayBuffer();
+  const hash = await crypto.subtle.digest('SHA-256', bytes);
+  return [...new Uint8Array(hash)].map(n=>n.toString(16).padStart(2,'0')).join('') === asset.sha256;
+}
+async function notify(clientId, message) {
+  if (!clientId) return;
+  const client = await self.clients.get(clientId);
+  client?.postMessage(message);
+}
+async function assetResponse(asset, clientId) {
+  const cache = await caches.open(CONTENT_CACHE), key = assetKey(asset);
+  const cached = await cache.match(key);
+  if (cached) return {response:cached,saved:true};
+  let response;
+  // 旧版の一括保存を消さず、内容の一致したファイルだけを再利用。
+  for (const name of await caches.keys()) {
+    if (!name.startsWith(PREFIX) || name === CONTENT_CACHE || name.startsWith(PREFIX+'shell:')) continue;
+    const old = await (await caches.open(name)).match(absolute(asset.url));
+    if (await valid(old, asset)) { response = old; break; }
+  }
+  if (!response) {
+    const abort = new AbortController(), timer = setTimeout(()=>abort.abort(),20000);
+    try { response = await fetch(new Request(absolute(asset.url), {cache:'reload',signal:abort.signal})); }
+    finally { clearTimeout(timer); }
+    if (!await valid(response,asset)) throw new Error('取得ファイルの内容・公開版が一致しません。');
+  }
+  try { await cache.put(key,response.clone()); return {response,saved:true}; }
+  catch {
+    await notify(clientId,{type:'CONTENT_ERROR',message:'追加コンテンツを端末に保存できません。オンライン表示は利用できます。空き容量を確認し、オフライン保存を再試行してください。'});
+    return {response,saved:false};
+  }
+}
+self.addEventListener('message', event => {
+  if (event.data?.type === 'ACTIVATE_UPDATE') { self.skipWaiting(); return; }
+  if (event.data?.type !== 'CACHE_CONTENT' || !event.ports?.[0]) return;
+  const port = event.ports[0], requested = event.data.examId;
+  event.waitUntil((async () => {
+    const assets = (await manifest()).filter(a=>requested==='all' ? a.group.startsWith('fp') : a.group===requested);
+    if (!assets.length) throw new Error('保存対象の過去問がありません。');
+    let next=0,processed=0,saved=0,failed=0;
+    const progress = ()=>port.postMessage({type:'CONTENT_PROGRESS',total:assets.length,processed,saved,failed});
+    progress();
+    await Promise.all([0,1].map(async()=> {
+      while (next<assets.length) {
+        const asset=assets[next++];
+        try { const result=await assetResponse(asset,event.source?.id); if(result.saved)saved++; else failed++; }
+        catch { failed++; }
+        processed++; progress();
+      }
+    }));
+    port.postMessage({type:'CONTENT_DONE',total:assets.length,processed,saved,failed});
+  })().catch(error=>port.postMessage({type:'CONTENT_FAILED',message:error.message})));
+});
 self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
-  if (event.request.method !== 'GET' || url.origin !== self.location.origin || !url.href.startsWith(self.registration.scope)) return;
-  event.respondWith((async () => {
-    const cache = await caches.open(CACHE);
-    const path = url.pathname;
-    const isShell = path === new URL('./', self.registration.scope).pathname || path.endsWith('/index.html');
-    const key = isShell ? new URL('./index.html', self.registration.scope).href : url.origin + path;
-    const cached = await cache.match(key);
+  const url = new URL(event.request.url), root=new URL('./',self.registration.scope), index=new URL('./index.html',root);
+  if (event.request.method!=='GET' || url.origin!==self.location.origin || !url.href.startsWith(self.registration.scope)) return;
+  // 公開版の確認とSW本体は常にネットワーク。旧キャッシュによる更新妨害を避ける。
+  if (url.pathname===new URL('./version.json',root).pathname || url.pathname===new URL('./sw.js',root).pathname) return;
+  event.respondWith((async()=>{
+    const key=url.pathname===root.pathname || url.pathname===index.pathname ? index.href : url.origin+url.pathname;
+    const cache=await caches.open(CACHE), cached=await cache.match(key);
     if (cached) return cached;
-    // このアプリ以外のページには、無関係なindex.htmlを返さない。
-    return fetch(event.request);
+    const asset=(await manifest()).find(a=>absolute(a.url)===key);
+    if (!asset) return fetch(event.request);
+    try { return (await assetResponse(asset,event.clientId)).response; }
+    catch {
+      await notify(event.clientId,{type:'CONTENT_ERROR',message:'この図表・PDFは端末に保存されていません。オンラインで開くか、「データ・設定」から対象回をオフライン保存してください。学習履歴は保持されています。'});
+      return new Response('追加コンテンツを取得できません。オンラインで保存後に再試行してください。',{status:503,headers:{'Content-Type':'text/plain; charset=utf-8'}});
+    }
   })());
 });

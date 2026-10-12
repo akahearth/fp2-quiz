@@ -62,11 +62,11 @@ export function loadPastState(storage, data) {
   const raw = storage?.getItem(PAST_KEY); return raw ? validatePastState(JSON.parse(raw),data) : emptyPastState();
 }
 const esc = v => String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function createPastUI({data,storage,main,getGrade,go,render,showNotice,confirmAction,download}) {
-  let state, protectedData = false, conflict = false, latest = null, selectedExam = {}, selectedMode = {}, zoom = false;
+export function createPastUI({data,storage,main,getGrade,go,render,showNotice,confirmAction,download,interactionBlocked=()=>false}) {
+  let state, protectedData = false, conflict = false, latest = null, selectedExam = {}, selectedMode = {}, zoom = false, saveFailed = false;
   try { state = loadPastState(storage,data); } catch { state = emptyPastState(); protectedData = true; }
-  function writable() { if(protectedData || conflict) { showNotice(protectedData ? '過去問の保存データを保護しています。先に元データを書き出してください。' : '別のタブで過去問の保存が変更されました。再読み込みしてください。',true); return false; } return true; }
-  function persist() { try {storage.setItem(PAST_KEY,JSON.stringify(validatePastState(state,data)));} catch {showNotice('過去問の保存に失敗しました。ページを開いている間は保持します。過去問のバックアップを書き出してください。',true);} }
+  function writable() { if(interactionBlocked()){showNotice('アプリを更新しています。切替えが完了してから学習してください。');return false;} if(protectedData || conflict) { showNotice(protectedData ? '過去問の保存データを保護しています。先に元データを書き出してください。' : '別のタブで過去問の保存が変更されました。再読み込みしてください。',true); return false; } return true; }
+  function persist() { try {storage.setItem(PAST_KEY,JSON.stringify(validatePastState(state,data)));saveFailed=false;} catch {saveFailed=true;showNotice('過去問の保存に失敗しました。ページを開いている間は保持します。過去問のバックアップを書き出してください。',true);} }
   const active = () => state.active[getGrade()];
   const examFor = s => data.exams.find(e=>e.id===s?.examId);
   function finish() { const s=active(),exam=examFor(s); if(!s || !writable()) return; const result=finishPast(s,exam); if(result) { state.results.unshift(result); state.results=state.results.slice(0,50); delete state.active[getGrade()];latest=result;persist();go('past-result'); } }
@@ -142,9 +142,9 @@ export function createPastUI({data,storage,main,getGrade,go,render,showNotice,co
       const parsed=JSON.parse(await file.text());requireThat(parsed?.app==='fp-past-exams'&&parsed.schemaVersion===1&&date(parsed.exportedAt),'過去問のバックアップではありません。');
       const restored=validatePastState(parsed.state,data);
       if(!await confirmAction('過去問の履歴を復元しますか？','両級の過去問の成績と途中保存を置き換えます。オリジナル問題の履歴は変更しません。','過去問の履歴を復元'))return;
-      if(conflict){writable();return;}storage.setItem(PAST_KEY,JSON.stringify(restored));state=restored;protectedData=false;latest=null;showNotice('過去問の履歴を復元しました。');render();
+      if(conflict){writable();return;}storage.setItem(PAST_KEY,JSON.stringify(restored));state=restored;protectedData=false;saveFailed=false;latest=null;showNotice('過去問の履歴を復元しました。');render();
     }catch(err){showNotice('過去問の復元を中止しました：'+err.message,true);}
   });
   window.addEventListener('storage',event=>{if(event.key===PAST_KEY||event.key===null){conflict=true;showNotice('別のタブで過去問の保存が変更されました。上書きを防ぐため再読み込みしてください。',true);}});
-  return {view:page=>page==='past-quiz'?quiz():page==='past-result'?result():listing(),tick,hasActive:()=>Object.keys(state.active).length>0};
+  return {view:page=>page==='past-quiz'?quiz():page==='past-result'?result():listing(),tick,hasActive:()=>Object.keys(state.active).length>0,updateBlocked:()=>protectedData||conflict||saveFailed};
 }

@@ -2,8 +2,9 @@ import { VERSION, validateBank, emptyHistory, loadState, saveState, exportBackup
 import { createMemo } from './memo.js';
 import { GRADES, GRADE_PREFERENCE_KEY, gradeConfig, readGrade } from './grades.js';
 import { validatePastBank, createPastUI } from './past.js';
+import { APP_VERSION, APP_RELEASE, createUpdateManager } from './pwa.js';
 
-let pastUI = null;
+let pastUI = null, pwa = null, pastExams = [], updateState = {message:'最新版はまだ確認していません。'}, contentState = null;
 
 const main = document.querySelector('#main');
 const notice = document.querySelector('#notice');
@@ -61,7 +62,7 @@ const dateLabel = date => new Date(date).toLocaleString('ja-JP', { month: 'numer
 let bank, history = emptyHistory(), active = null, resultSession = null, settings = { mode: 'random', count: 10, fieldIds: [], unitId: '' };
 let grade = '2', banks = {};
 const unsavedGrades = new Map();
-let storage, protectedStorage = false, storageFailed = false, waitingWorker = null, conflictingTab = false;
+let storage, protectedStorage = false, storageFailed = false, conflictingTab = false;
 
 function showNotice(message, error = false) {
   notice.textContent = message;
@@ -74,6 +75,7 @@ function persist() {
   catch { unsavedGrades.set(grade,{history,active}); storageFailed = true; showNotice('履歴を端末に保存できません。今回の学習は画面を閉じると失われる可能性があります。「データ・設定」でバックアップを保存してください。', true); return false; }
 }
 function canMutate() {
+  if (pwa?.activating) { showNotice('アプリを更新しています。切替えが完了してから学習してください。'); return false; }
   if (conflictingTab) { showNotice('別のタブで履歴が更新されました。記録の上書きを防ぐため、この画面を再読み込みしてください。', true); return false; }
   if (protectedStorage) { showNotice('保存データを読み込めませんでした。元データを保護しています。「データ・設定」から元データの保存・復元・初期化を行ってください。', true); return false; }
   return true;
@@ -167,16 +169,44 @@ function statsView() {
   <div class="panel"><h2>小単元・問題ごとの成績</h2>${bank.fields.map(f => `<section class="stats-field"><h3>${esc(f.name)}</h3><div class="table-wrap"><table><thead><tr><th>小単元</th><th>回答数</th><th>正答率</th><th>学習済み</th></tr></thead><tbody>${f.units.map(u => { const a = aggregate(bank.questions.filter(q => q.unitId === u.id), history); return `<tr><td>${esc(u.name)}</td><td>${a.attempts}回</td><td>${percent(a.accuracy)}</td><td>${a.learned} / ${a.total}問</td></tr>`; }).join('')}</tbody></table></div><details style="margin-top:13px"><summary class="small">問題ごとの履歴を確認</summary><div class="table-wrap"><table><thead><tr><th>問題ID・小単元</th><th>正解 / 回答</th><th>正答率</th><th>状態</th><th>最終回答</th></tr></thead><tbody>${bank.questions.filter(q => q.fieldId === f.id).map(q => { const r = history.records[q.id]; return `<tr><td>${esc(q.id)}<br>${esc(names(q).unit)}</td><td>${r?.correct || 0} / ${r?.attempts || 0}</td><td>${percent(r?.attempts ? r.correct / r.attempts * 100 : null)}</td><td>${!r?.attempts ? '未学習' : r.reviewPending ? `復習待ち（${r.reviewStreak}/2）` : r.mastered ? '克服済み' : '学習済み'}</td><td>${r?.lastAnsweredAt ? `${dateLabel(r.lastAnsweredAt)}<br>${r.lastCorrect ? '正解' : '不正解'}` : '—'}</td></tr>`; }).join('')}</tbody></table></div></details></section>`).join('')}</div>
   <div class="panel"><h2>直近の演習履歴</h2>${history.sessions.length ? `<div class="session-list">${history.sessions.slice(0, 10).map(s => `<div class="session-row"><span>${modeNames[s.mode]}<br><span class="muted">${dateLabel(s.endedAt)} · ${s.answered} / ${s.total} 問回答</span></span><strong>${s.answered ? Math.round(s.correct / s.answered * 100) + '%' : '回答なし'}<br><span class="muted">${s.correct} 問正解</span></strong></div>`).join('')}</div>` : '<p class="muted small">まだ演習を終了していません。学習をはじめると、ここに結果が記録されます。</p>'}<p class="small muted" style="margin-top:15px">正答率 = 累計正解回答数 ÷ 累計回答数 × 100。演習履歴は直近50回分を保存し、画面には10回分を表示します。累計件数は保持します。</p></div>`;
 }
+
+function pwaPanel() {
+  return '<div class="panel pwa-panel"><h2>アプリの更新とオフライン利用</h2><p class="small">アプリ版'+esc(APP_VERSION)+' · '+esc(APP_RELEASE)+'</p><p id="pwa-update-status" role="status" aria-live="polite"></p><div class="button-row"><button class="button secondary" data-action="check-update">最新版を確認</button><button class="button primary" data-action="apply-update">更新する</button></div><hr><h3>過去問をオフライン保存</h3><p class="small">基本問題は自動で保存します。過去問の図表・PDFは利用時に保存されます。通信のない場所で解く回は、ここで事前に保存してください。</p><label for="offline-exam">保存する過去問</label><select id="offline-exam">'+pastExams.map(e=>'<option value="'+esc(e.id)+'">FP'+e.grade+'級 · '+esc(e.title)+'</option>').join('')+'<option value="all">すべての過去問（360問）</option></select><button class="button secondary" data-action="cache-exam">選択した過去問を保存</button><p id="pwa-content-status" role="status" aria-live="polite"></p><p class="small muted">ホーム画面のアプリとSafariのタブで保存場所が異なる場合があります。利用するホーム画面アプリ内で更新確認・オフライン保存を行ってください。更新では学習記録を削除しません。</p></div>';
+}
+function syncPWA() {
+  const status=main.querySelector('#pwa-update-status'); if(status)status.textContent=updateState.message;
+  main.querySelector('[data-action="check-update"]')?.toggleAttribute('disabled',!!updateState.busy);
+  const apply=main.querySelector('[data-action="apply-update"]');if(apply)apply.disabled=!updateState.canApply||pwa?.activating;
+  const save=main.querySelector('[data-action="cache-exam"]');if(save)save.disabled=!!pwa?.downloadBusy;
+  const progress=main.querySelector('#pwa-content-status');
+  if(progress)progress.textContent=contentState?.message|| (contentState?contentState.saved+' / '+contentState.total+'件を保存'+(contentState.failed?' · 失敗'+contentState.failed+'件':'')+(contentState.type==='CONTENT_DONE'?'。'+(contentState.failed?'保存済み分を保持しました。同じ回で再試行してください。':'選択した回はオフラインで利用できます。'):''):'保存済みのファイルは再利用します。途中で失敗した場合も再試行できます。');
+  const banner=document.querySelector('#update-banner');banner.hidden=!updateState.canApply&& !['failed','installing','activating'].includes(updateState.phase);
+  document.querySelector('#update-message').textContent=updateState.message;
+  document.querySelector('#check-update').disabled=!!updateState.busy;
+  document.querySelector('#apply-update').hidden=!updateState.canApply;
+  document.querySelector('#apply-update').disabled=!updateState.canApply||pwa?.activating;
+}
+function updateBlockReason() {
+  if(dialog.open)return '確認画面を閉じてから、更新してください。';
+  if(active||pastUI?.hasActive())return '途中の演習・過去問を終了してから更新してください。履歴と途中保存は保持しています。';
+  if(storageFailed||protectedStorage||conflictingTab||unsavedGrades.size||pastUI?.updateBlocked())return '学習データの保存状態を確認し、アプリ内でバックアップを保存してから更新してください。';
+  try {for(const level of Object.keys(GRADES))if(loadState(storage,banks[level]).active)return '別の級に途中の演習があります。その級で演習を終了してから更新してください。';}
+  catch{return '別の級の保存データを読み込めません。元データを保護しています。バックアップを確認してから更新してください。';}
+  if(pwa?.downloadBusy)return '過去問のオフライン保存が終わってから更新してください。';
+  return null;
+}
+
 function dataView() {
   const unknown = Object.keys(history.records).filter(id => !bank.questions.some(q => q.id === id)).length;
   const pending = bank.questions.filter(q => q.needsReview);
   return `${pageHead('大切な学習記録を守る', 'データ・設定', `${gradeConfig(grade).label}の履歴を管理します。履歴とバックアップは級ごとに分かれています。`)}
+  ${pwaPanel()}
   ${protectedStorage ? '<div class="panel danger-panel"><h2>保存データを保護しています</h2><p class="small">保存形式を確認できません。元のデータを保存してから、有効なバックアップを復元するか、履歴の初期化を行ってください。</p><button class="button secondary" data-action="raw-export">読み込めなかった元データを保存</button></div>' : ''}
   <div class="panel data-card"><div><h2>履歴をバックアップ</h2><p>累計成績・復習状態・演習結果をJSONファイルで保存します。<br>進行中の演習はバックアップに含みません。</p></div><button class="button primary" data-action="export" ${protectedStorage ? 'disabled' : ''}>JSONを書き出す</button></div>
   <div class="panel data-card"><div><h2>バックアップから復元</h2><p>ファイルを検証した後、確認画面を表示します。<br>復元すると現在の履歴を置き換え、途中の演習を終了します。</p></div><button class="button secondary" data-action="import">JSONを読み込む</button><input type="file" id="import-file" accept=".json,application/json" hidden></div>
   <div class="panel"><h2>このアプリについて</h2><p class="small">問題データ ${esc(bank.dataVersion)} · ${bank.questions.length}問 · 保存形式 v${VERSION}<br>${gradeConfig(grade).label}の学習用オリジナル${gradeConfig(grade).formatLabel}問題です。法令・制度の基準日は各問題の解説で確認できます。</p><p class="small muted">${unknown ? `現在の問題集に含まれない${unknown}件の問題IDの履歴も保持しています。成績の集計対象は現在の問題集です。<br>` : ''}自動同期はありません。別の端末へ移すときはバックアップを利用してください。プライベートブラウズやブラウザデータの消去で履歴が失われる場合があります。</p><a class="small" href="${esc(bank.taxonomySource.url)}" target="_blank" rel="noopener noreferrer">日本FP協会の${grade}級試験範囲を確認 ↗</a></div>
   <div class="panel"><h2>問題の検証・校正</h2><p class="small">全${bank.questions.length}問の問題文・正解・全選択肢・解説を照合しました。<br>確認済み ${bank.questions.length-pending.length}問 · 要確認 ${pending.length}問<br>法令基準日：${esc(bank.lawBasisDate || '各問題を参照')} · 照合日：2026-10-11</p><p class="small">要確認の問題はすべての演習・模試から除外しています。検証記録には、問題ごとの修正内容と出典URLを収録しています。</p><div class="button-row"><a class="button secondary" href="${gradeConfig(grade).audit}.md" download>検証記録を保存</a><a class="button secondary" href="${gradeConfig(grade).audit}.json" download>検証JSONを保存</a></div>${pending.map(q=>`<details class="explanation-toggle"><summary><span class="badge">要確認</span><span>${esc(q.id)} · ${esc(names(q).unit)}</span></summary><div class="detail-content"><p>${esc(q.prompt)}</p><p class="small">${esc(q.reviewReason)}</p>${q.sources.map(s=>`<p class="small"><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)} ↗</a></p>`).join('')}</div></details>`).join('')}</div>
-  <div class="panel"><h2>iPhoneでホーム画面に追加</h2><ol class="help-list"><li>HTTPSで公開したこのアプリを、Safariで開きます。</li><li>共有メニューから「ホーム画面に追加」を選びます。</li><li>追加したアイコンで起動し、一度オンラインで問題を読み込みます。</li><li>上部に「オフライン利用の準備完了」が表示されてから、オフラインで利用してください。</li></ol><p class="small muted">初回は接続が必要です。参照先の外部サイトはオフラインでは開けません。</p></div>
+  <div class="panel"><h2>iPhoneでホーム画面に追加</h2><ol class="help-list"><li>HTTPSで公開したこのアプリを、Safariで開きます。</li><li>共有メニューから「ホーム画面に追加」を選びます。</li><li>追加したアイコンで起動し、一度オンラインで問題を読み込みます。</li><li>上部に「基本問題はオフライン利用可」が表示されてから利用してください。過去問の図表・PDFは、この画面で事前に保存できます。</li></ol><p class="small muted">初回は接続が必要です。参照先の外部サイトはオフラインでは開けません。</p></div>
   <div class="panel data-card danger-panel"><div><h2>学習履歴を初期化</h2><p>成績・復習状態・途中の演習を削除します。<br>この操作は取り消せません。必要なら先にバックアップしてください。</p></div><button class="button secondary" data-action="reset">履歴を削除する</button></div>`;
 }
 
@@ -187,7 +217,7 @@ function render(focus = false) {
   if ((page === 'quiz' && !active) || (page === 'result' && !resultSession)) page = 'home';
   const views = { home: homeView, settings: settingsView, quiz: quizView, result: resultView, stats: statsView, data: dataView };
   main.innerHTML = page.startsWith('past') ? pastUI.view(page) : views[page]();
-  syncMemo();
+  syncMemo(); syncPWA();
   document.querySelectorAll('nav a').forEach(a => { const selected = a.dataset.page === (['quiz', 'result'].includes(page) ? 'settings' : page); a.classList.toggle('active', selected); if (selected) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
   document.title = `${{home:'ホーム',settings:'出題設定',quiz:'問題演習',result:'学習結果',stats:'学習成績',data:'データ・設定',past:'過去問', 'past-quiz':'過去問演習', 'past-result':'過去問の結果'}[page]} | ${gradeConfig(grade).label} 学習トレーナー`;
   tick();
@@ -305,25 +335,28 @@ document.addEventListener('visibilitychange', () => { if (!document.hidden) tick
 setInterval(tick, 1000);
 
 let offlineReady = false;
-function networkStatus() { document.querySelector('#network-status').textContent = navigator.onLine ? offlineReady ? '● オフライン利用の準備完了' : '● オンライン' : offlineReady ? '● オフラインで学習中' : '● オフライン'; }
+function networkStatus() { document.querySelector('#network-status').textContent = navigator.onLine ? offlineReady ? '● 基本問題はオフライン利用可' : '● オンライン' : offlineReady ? '● 保存済み問題でオフライン学習中' : '● オフライン'; }
 window.addEventListener('online', networkStatus); window.addEventListener('offline', networkStatus);
 async function setupPWA() {
-  if (!('serviceWorker' in navigator) || !window.isSecureContext) { networkStatus(); showNotice('オフライン利用にはHTTPS公開またはlocalhostでの起動が必要です。'); return; }
-  try {
-    const reg = await navigator.serviceWorker.register('./sw.js', { scope: './', updateViaCache: 'none' });
-    function showUpdate(worker) { waitingWorker = worker; document.querySelector('#update-banner').hidden = false; }
-    if (reg.waiting && navigator.serviceWorker.controller) showUpdate(reg.waiting);
-    reg.addEventListener('updatefound', () => { const worker = reg.installing; worker.addEventListener('statechange', () => { if (worker.state === 'installed' && navigator.serviceWorker.controller && reg.waiting) showUpdate(reg.waiting); }); });
-    const ready = await navigator.serviceWorker.ready;
-    if (ready.active) { offlineReady = true; networkStatus(); }
-    let reloading = false;
-    navigator.serviceWorker.addEventListener('controllerchange', () => { if (waitingWorker && !reloading) { reloading = true; location.reload(); } });
-  } catch { showNotice('オフライン用データの準備に失敗しました。オンラインで再読み込みしてください。', true); }
+  const supported='serviceWorker' in navigator && window.isSecureContext;
+  pwa=createUpdateManager({
+    serviceWorker:supported?navigator.serviceWorker:null,online:()=>navigator.onLine,visible:()=>!document.hidden,
+    canReload:updateBlockReason,reload:()=>location.reload(),
+    onState:state=>{updateState=state;syncPWA();},
+    onCoreReady:ready=>{offlineReady=ready;networkStatus();},
+    onContent:data=>{contentState=data;syncPWA();if(['CONTENT_ERROR','CONTENT_FAILED'].includes(data.type))showNotice(data.message,true);},
+    fetchVersion:async()=>{const response=await fetch('./version.json?check='+Date.now(),{cache:'no-store'});if(!response.ok)throw new Error('公開版情報 HTTP '+response.status);return response.json();},
+    windowEvents:window,documentEvents:document
+  });
+  await pwa.start();
 }
-document.querySelector('#apply-update').addEventListener('click', () => {
-  if (active || pastUI?.hasActive()) { showNotice('進行中の演習・過去問を終了してから、アプリを更新してください。'); return; }
-  if (storageFailed || protectedStorage || conflictingTab) { showNotice('学習データの保存状態を確認し、バックアップを取ってから再読み込みしてください。', true); return; }
-  waitingWorker?.postMessage({ type: 'ACTIVATE_UPDATE' });
+document.querySelector('#check-update').addEventListener('click',()=>void pwa?.check());
+document.querySelector('#apply-update').addEventListener('click',()=>pwa?.apply());
+main.addEventListener('click',event=>{
+  const action=event.target.closest('[data-action]')?.dataset.action;
+  if(action==='check-update')void pwa?.check();
+  if(action==='apply-update')pwa?.apply();
+  if(action==='cache-exam'){const selected=main.querySelector('#offline-exam')?.value;void pwa?.download(selected);syncPWA();}
 });
 
 function loadGradeState() {
@@ -368,8 +401,8 @@ async function init() {
     grade = readGrade(storage); loadGradeState();
     const pastResponse = await fetch('./past-exams.json');
     if (!pastResponse.ok) throw new Error('過去問データを取得できませんでした。');
-    const pastData = validatePastBank(await pastResponse.json());
-    pastUI = createPastUI({data:pastData, storage, main, getGrade:()=>grade, go, render, showNotice, confirmAction, download});
+    const pastData = validatePastBank(await pastResponse.json()); pastExams=pastData.exams;
+    pastUI = createPastUI({data:pastData, storage, main, getGrade:()=>grade, go, render, showNotice, confirmAction, download, interactionBlocked:()=>!!pwa?.activating});
     document.querySelector('#grade-select').disabled = false;
     if (active && expired(active)) { finish(); showNotice('前回の模試は制限時間を過ぎたため、確定した回答を採点しました。'); }
     render(); networkStatus(); setupPWA();

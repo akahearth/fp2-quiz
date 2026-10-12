@@ -42,10 +42,10 @@ function workerEnvironment(script = source) {
   }
   return { dispatch, requests, cacheModes, cachesMap, caches, setOnline: value => online = value, get skipped() { return skipped; }, get claimed() { return claimed; } };
 }
-test('Service Workerは両級・過去問120画像と問題PDFを含む146リソースをプリキャッシュする', async () => {
+test('Service Workerは両級・過去問360画像と問題PDFを含む390リソースをプリキャッシュする', async () => {
   const w = workerEnvironment(); await w.dispatch('install');
-  assert.equal(w.requests.length, 146); assert.ok(w.requests.every(url => url.startsWith(scope)));
-  assert.ok(pastFiles.every(p=>w.requests.includes(scope+p)));assert.equal(new Set(w.requests).size,146);
+  assert.equal(w.requests.length, 390); assert.ok(w.requests.every(url => url.startsWith(scope)));
+  assert.ok(pastFiles.every(p=>w.requests.includes(scope+p)));assert.equal(new Set(w.requests).size,390);
   assert.ok(w.requests.includes(scope + 'questions.json')); assert.ok(w.requests.includes(scope + 'core.js'));
   assert.equal(w.skipped, 0); // 更新はユーザー操作まで待機。
 });
@@ -54,7 +54,7 @@ test('サーバー切断後もHTML・CSS・JS・問題JSON・アイコンをキ�
   for (const file of ['', 'index.html', 'style.css', 'app.js', 'core.js', 'grades.js', 'memo.js', 'questions.json', 'questions-fp3.json', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png', 'AUDIT.md', 'AUDIT.json', 'SOURCES.md', 'AUDIT-FP3.md', 'AUDIT-FP3.json', 'SOURCES-FP3.md', 'past.js','past-exams.json','REVISION.md','REVISION.json','PAST-EXAMS.md',...pastFiles]) {
     const response = await w.dispatch('fetch', { request: new Request(scope + file) }); assert.equal(response.status, 200); assert.ok((await response.arrayBuffer()).byteLength > 0);
   }
-  assert.equal(w.requests.length, 146); assert.equal(w.claimed, 1);
+  assert.equal(w.requests.length, 390); assert.equal(w.claimed, 1);
 });
 test('URLに検索パラメータがあってもサブディレクトリの起動画面をキャッシュから開く', async () => {
   const w = workerEnvironment(); await w.dispatch('install'); w.setOnline(false);

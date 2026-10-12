@@ -7,6 +7,7 @@ export function validatePastBank(data) {
   requireThat(new Set(data.exams.map(e => e.id)).size === data.exams.length, '過去問のセットIDが重複しています。');
   for (const e of data.exams) {
     requireThat(/^fp[23]-\d{6}$/.test(e.id) && ['2','3'].includes(e.grade) && e.id.startsWith('fp'+e.grade+'-') && typeof e.title === 'string' && /^https:\/\//.test(e.sourceUrl), '過去問の出典・級を確認してください。');
+    requireThat(e.answerUrl === undefined || /^https:\/\//.test(e.answerUrl), '過去問の模範解答の出典を確認してください。');
     requireThat(e.minutes === (e.grade === '2' ? 120 : 90) && /^\d{4}-\d\d-\d\d$/.test(e.lawBasisDate), '過去問の時間・基準日が不正です。');
     requireThat(e.questions.length === 60, '過去問は60問のセットが必要です。');
     e.questions.forEach((q, i) => {
@@ -69,7 +70,7 @@ export function createPastUI({data,storage,main,getGrade,go,render,showNotice,co
   const active = () => state.active[getGrade()];
   const examFor = s => data.exams.find(e=>e.id===s?.examId);
   function finish() { const s=active(),exam=examFor(s); if(!s || !writable()) return; const result=finishPast(s,exam); if(result) { state.results.unshift(result); state.results=state.results.slice(0,50); delete state.active[getGrade()];latest=result;persist();go('past-result'); } }
-  function source(exam) { return `<details class="sources"><summary>出典・加工内容</summary><p>${esc(exam.sourceTitle)}<br>法令基準日：${esc(exam.lawBasisDate)}</p><p>${esc(exam.processing)}</p><a href="${esc(exam.sourceUrl)}" target="_blank" rel="noopener noreferrer">公式の問題・正解を確認 ↗</a><a href="${esc(exam.questionPdf)}" download>正解を非表示にした問題PDFを保存</a><a href="${esc(exam.licenseUrl)}" target="_blank" rel="noopener noreferrer">日本FP協会の試験問題利用条件 ↗</a></details>`; }
+  function source(exam) { return `<details class="sources"><summary>出典・加工内容</summary><p>${esc(exam.sourceTitle)}<br>法令基準日：${esc(exam.lawBasisDate)}</p><p>${esc(exam.processing)}</p><a href="${esc(exam.sourceUrl)}" target="_blank" rel="noopener noreferrer">${exam.answerUrl?'公式の問題を確認':'公式の問題・正解を確認'} ↗</a>${exam.answerUrl?`<a href="${esc(exam.answerUrl)}" target="_blank" rel="noopener noreferrer">公式の模範解答を確認 ↗</a>`:''}<a href="${esc(exam.questionPdf)}" download>問題のみのPDFを保存</a><a href="${esc(exam.licenseUrl)}" target="_blank" rel="noopener noreferrer">日本FP協会の試験問題利用条件 ↗</a></details>`; }
   function listing() {
     const grade=getGrade(), exams=data.exams.filter(e=>e.grade===grade),s=active(), e=exams.find(e=>e.id===selectedExam[grade])||exams[0];
     if(!e)return '<div class="panel"><h1>この級の過去問は未収録です。</h1></div>';

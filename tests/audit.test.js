@@ -9,7 +9,7 @@ test('全300問の6項目の照合、法令基準日、全4選択肢の判定と
   assert.equal(audit.counts.confirmed,294); assert.equal(audit.counts.needsReview,6);
   for(const q of bank.questions) {
     const row=audit.questions.find(r=>r.id===q.id);
-    assert.equal(q.basisDate,'2026-04-01');assert.equal(q.lastVerified,'2026-10-11');
+    assert.equal(q.basisDate,'2026-04-01');assert.ok(['2026-10-11','2026-10-12'].includes(q.lastVerified));assert.equal(row.checkedAt,q.lastVerified);
     assert.equal(q.audit.checkedItems.length,6);assert.equal(row.choices.length,4);
     assert.equal(row.choices.filter(c=>c.assessment==='正解').length,1);
     assert.deepEqual(row.choices.map(c=>c.explanation),q.choices.map(c=>c.explanation));
@@ -44,7 +44,7 @@ test('数値・期間の区別と2つの初期計算問題を独立に確認',()
   const answer=id=>{const q=find(id);return q.choices.find(c=>c.id===q.correctChoiceId).text;};
   assert.equal(answer('estate-001'),`${200*.6}㎡`);
   assert.equal(answer('tax-002'),`${240-80}万円`);
-  assert.match(find('risk-048').prompt,/60回（月1回）/);assert.match(find('risk-048').prompt,/10万円/);
+  assert.match(find('risk-048').prompt,/毎月1回、合計60回/);assert.match(find('risk-048').prompt,/10万円/);
   assert.match(find('life-048').prompt,/年額/);assert.match(find('risk-005').prompt,/保険期間満了/);
   assert.match(find('life-047').prompt,/10円未満.*四捨五入/);
 });

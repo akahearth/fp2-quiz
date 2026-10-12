@@ -29,7 +29,7 @@ test('300問・6分野各50問、4択、全解説、基準日・参照先がそ�
   bank.questions.forEach(q => {
     assert.equal(q.choices.length, 4);
     q.choices.forEach(c => assert.ok(c.explanation.length > 10));
-    assert.equal(q.lastVerified, '2026-10-11');
+    assert.ok(['2026-10-11','2026-10-12'].includes(q.lastVerified));
   });
 });
 test('問題の重複ID・不明小単元・解説欠落・不正基準日を拒否', () => {

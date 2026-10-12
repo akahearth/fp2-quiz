@@ -1,6 +1,9 @@
 import { VERSION, validateBank, emptyHistory, loadState, saveState, exportBackup, importBackup, poolFor, aggregate, createSession, submitAnswer, nextQuestion, finishSession, expired } from './core.js';
 import { createMemo } from './memo.js';
 import { GRADES, GRADE_PREFERENCE_KEY, gradeConfig, readGrade } from './grades.js';
+import { validatePastBank, createPastUI } from './past.js';
+
+let pastUI = null;
 
 const main = document.querySelector('#main');
 const notice = document.querySelector('#notice');
@@ -98,6 +101,7 @@ function homeView() {
     <div class="section-head"><h2>今日の学習をはじめる</h2><a href="#settings">出題条件を設定 ${icon('arrow')}</a></div>
     <div class="action-grid"><article class="action-card green"><span class="badge">6分野からランダムに</span><span class="action-symbol">${icon('book')}</span><h2>まずは、10問から。</h2><p>問題ごとの解説で、知識をひとつずつ確かめる。</p><button class="button light" data-action="random">ランダム演習をはじめる ${icon('arrow')}</button></article>
     <article class="action-card warm"><span class="small muted">復習待ち ${a.pending} 問</span><span class="action-symbol">${icon('repeat')}</span><h2>間違いが、学びになる。</h2><p>${a.pending ? '復習で2回連続正解して、苦手を克服しよう。' : '間違えた問題がここに集まります。'}</p><button class="button warm-button" data-action="review" ${a.pending ? '' : 'disabled'}>間違い直しをはじめる ${icon('arrow')}</button></article></div>
+    <div class="bottom-panel"><div><h3>公表過去問を解く</h3><p>日本FP協会の公表問題・図表を、公式の正解で採点。1問ずつの練習と本番形式を選べます。</p></div><a class="button secondary" href="#past">過去問を解く ${icon('arrow')}</a></div>
     <div class="section-head"><h2>6分野の学習状況</h2><a href="#stats">成績を詳しく見る ${icon('arrow')}</a></div><div class="subject-grid">${subjectCards()}</div>
     <div class="bottom-panel"><div><h3>本番を意識した、${mockCount === 60 ? '60問模試' : 'お試し模試'}</h3><p>全${mockCount}問・${mockCount * gradeConfig(grade).minutesPerQuestion}分。解説は試験終了後にまとめて確認。</p></div><button class="button secondary" data-action="mock">模試を設定 ${icon('arrow')}</button></div>
     ${last ? `<div class="bottom-panel"><div><h3>直近の演習 · ${modeNames[last.mode]}</h3><p>${dateLabel(last.endedAt)} · ${last.answered} 問回答 / ${last.correct} 問正解${last.answered < last.total ? ` / 未回答 ${last.total - last.answered} 問` : ''}</p></div><strong>${last.answered ? Math.round(last.correct / last.answered * 100) + '%' : '回答なし'}</strong></div>` : ''}`;
@@ -179,13 +183,13 @@ function dataView() {
 function render(focus = false) {
   if (!bank) return;
   let page = location.hash.slice(1) || 'home';
-  if (!['home', 'settings', 'quiz', 'result', 'stats', 'data'].includes(page)) page = 'home';
+  if (!['home', 'settings', 'quiz', 'result', 'stats', 'data', 'past', 'past-quiz', 'past-result'].includes(page)) page = 'home';
   if ((page === 'quiz' && !active) || (page === 'result' && !resultSession)) page = 'home';
   const views = { home: homeView, settings: settingsView, quiz: quizView, result: resultView, stats: statsView, data: dataView };
-  main.innerHTML = views[page]();
+  main.innerHTML = page.startsWith('past') ? pastUI.view(page) : views[page]();
   syncMemo();
   document.querySelectorAll('nav a').forEach(a => { const selected = a.dataset.page === (['quiz', 'result'].includes(page) ? 'settings' : page); a.classList.toggle('active', selected); if (selected) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
-  document.title = `${{home:'ホーム',settings:'出題設定',quiz:'問題演習',result:'学習結果',stats:'学習成績',data:'データ・設定'}[page]} | ${gradeConfig(grade).label} 学習トレーナー`;
+  document.title = `${{home:'ホーム',settings:'出題設定',quiz:'問題演習',result:'学習結果',stats:'学習成績',data:'データ・設定',past:'過去問', 'past-quiz':'過去問演習', 'past-result':'過去問の結果'}[page]} | ${gradeConfig(grade).label} 学習トレーナー`;
   tick();
   if (focus) { main.scrollTop = 0; main.focus({ preventScroll: true }); window.scrollTo(0, 0); }
 }
@@ -204,6 +208,7 @@ function finish(now = Date.now()) {
   go('result');
 }
 function tick() {
+  pastUI?.tick();
   if (!active || active.mode !== 'mock') return;
   if (expired(active)) {
     if (dialog.open) dialog.close('cancel');
@@ -316,7 +321,7 @@ async function setupPWA() {
   } catch { showNotice('オフライン用データの準備に失敗しました。オンラインで再読み込みしてください。', true); }
 }
 document.querySelector('#apply-update').addEventListener('click', () => {
-  if (active) { showNotice('進行中の演習を終了してから、アプリを更新してください。'); return; }
+  if (active || pastUI?.hasActive()) { showNotice('進行中の演習・過去問を終了してから、アプリを更新してください。'); return; }
   if (storageFailed || protectedStorage || conflictingTab) { showNotice('学習データの保存状態を確認し、バックアップを取ってから再読み込みしてください。', true); return; }
   waitingWorker?.postMessage({ type: 'ACTIVATE_UPDATE' });
 });
@@ -361,6 +366,10 @@ async function init() {
     }));
     try { storage = window.localStorage; } catch { /* 保存不可時も演習を続けられる。 */ }
     grade = readGrade(storage); loadGradeState();
+    const pastResponse = await fetch('./past-exams.json');
+    if (!pastResponse.ok) throw new Error('過去問データを取得できませんでした。');
+    const pastData = validatePastBank(await pastResponse.json());
+    pastUI = createPastUI({data:pastData, storage, main, getGrade:()=>grade, go, render, showNotice, confirmAction, download});
     document.querySelector('#grade-select').disabled = false;
     if (active && expired(active)) { finish(); showNotice('前回の模試は制限時間を過ぎたため、確定した回答を採点しました。'); }
     render(); networkStatus(); setupPWA();

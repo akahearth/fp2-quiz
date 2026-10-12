@@ -1,304 +1,304 @@
-# FP3級問題の出典索引
+# FP3級の出典索引
 
-全選択肢と確認内容は[AUDIT-FP3.md](./AUDIT-FP3.md)に収録しています。
+データ版：2026-10-12.fp3-editorial。法令基準日2026年4月1日。全選択肢は[AUDIT-FP3.md](./AUDIT-FP3.md)を参照してください。
 
-- **fp3-life-001**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-002**：[住宅金融支援機構 フラット35](https://www.flat35.com/loan/lineup/flat35/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-003**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-004**：[国税庁 No.9204 税理士・税理士法人でない者が行う税理士業務](https://www.nta.go.jp/taxes/shiraberu/taxanswer/osirase/9204.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-005**：[日本FP協会 FP相談Q&A（会員倫理規程・守秘義務）](https://www.jafp.or.jp/confer/fpsoudan/qa/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-006**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-007**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-008**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-009**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-010**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-011**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-012**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-013**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-014**：[協会けんぽ 出産手当金](https://www.kyoukaikenpo.or.jp/benefit/childbirth/001/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-015**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-016**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-017**：[日本年金機構 老齢基礎年金の受給要件・支給開始時期・年金額](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/jukyu-yoken/20150401-01.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-018**：[日本年金機構 老齢基礎年金の受給要件・支給開始時期・年金額](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/jukyu-yoken/20150401-01.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-019**：[日本年金機構 年金の繰上げ受給](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/kuriage-kurisage/20140421-01.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-020**：[日本年金機構 国民年金保険料の学生納付特例制度](https://www.nenkin.go.jp/service/kokunen/menjo/20150514.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-021**：[日本年金機構 保険料の追納について](https://www.nenkin.go.jp/section/faq/kokunen/seido/hokenryo/tsuino/20200820.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-022**：[日本年金機構 付加保険料の納付](https://www.nenkin.go.jp/service/kokunen/hokenryo/fukanofu.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-023**：[iDeCo公式サイト iDeCoの特徴](https://www.ideco-koushiki.jp/guide/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-024**：[国税庁 No.1135 小規模企業共済等掛金控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm)、[iDeCo公式サイト iDeCoの特徴](https://www.ideco-koushiki.jp/guide/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-025**：[住宅金融支援機構 フラット35・繰上返済](https://www.flat35.com/user/kuriage_hensai.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-001**：[生命保険文化センター 定期保険](https://www.jili.or.jp/knows_learns/kind/main/41.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-002**：[生命保険文化センター 終身保険](https://www.jili.or.jp/knows_learns/kind/main/37.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-003**：[生命保険文化センター 生命保険の種類（養老・終身・介護・特約）](https://www.jili.or.jp/files/consul/consultation_manual_2.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-004**：[生命保険文化センター 収入保障保険](https://www.jili.or.jp/knows_learns/kind/main/40.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-005**：[生命保険文化センター 変額保険](https://www.jili.or.jp/knows_learns/kind/main/29.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-006**：[生命保険文化センター 個人年金保険](https://www.jili.or.jp/knows_learns/kind/main/30.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-007**：[生命保険文化センター 定期保険](https://www.jili.or.jp/knows_learns/kind/main/41.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-008**：[生命保険文化センター 契約者貸付](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-009**：[金融庁 生命保険について（告知義務）](https://www.fsa.go.jp/receipt/soudansitu/advice02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-010**：[生命保険文化センター 生命保険相談マニュアル・第5章](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-011**：[生命保険文化センター 生命保険相談マニュアル・第5章](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-012**：[生命保険文化センター 契約者貸付](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-013**：[金融庁 保険契約に際しての手引](https://www.fsa.go.jp/ordinary/hokenkeiyaku/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-014**：[生命保険文化センター 生命保険の契約にあたっての手引（必要保障額）](https://jili.or.jp/tebiki/chapter1.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-015**：[日本損害保険協会 免責と免責金額](https://soudanguide.sonpo.or.jp/basic/5_1_q4.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-016**：[日本損害保険協会 リスクへの対策（回避・低減・保有・移転）](https://www.sonpo.or.jp/news/release/2024/pdf/20240722_01.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-017**：[日本損害保険協会 リスクへの対策（回避・低減・保有・移転）](https://www.sonpo.or.jp/news/release/2024/pdf/20240722_01.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-018**：[生命保険文化センター 医療保険](https://www.jili.or.jp/knows_learns/kind/main/35.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-019**：[生命保険文化センター がん保険](https://www.jili.or.jp/knows_learns/kind/main/34.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-020**：[国税庁 リビング・ニーズ特約に基づく生前給付金](https://www.nta.go.jp/law/shitsugi/shotoku/01/03.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-021**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-022**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-023**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-024**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-025**：[日本損害保険協会 自賠責保険](https://www.sonpo.or.jp/insurance/jibai/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-001**：[金融庁 資産形成の基本（分散投資）](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-002**：[日本証券業協会 個人向け社債の特徴やリスク、価格情報の入手方法](https://www.jsda.or.jp/about/hatten/risk/shasai/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-003**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-004**：[GPIF 投資のリスクとは](https://www.gpif.go.jp/gpif/diversification2.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-005**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-006**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-007**：[総務省統計局 消費者物価指数](https://www.stat.go.jp/data/cpi/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-008**：[総務省統計局 統計FAQ・国内総生産](https://www.stat.go.jp/library/faq/faq03/faq03a01.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-009**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-010**：[金融庁 預金保険制度](https://www.fsa.go.jp/policy/payoff/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-011**：[金融庁 決済用預金の3要件](https://www.fsa.go.jp/policy/payoff/01.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-012**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-013**：[金融庁 資産形成の基本（株式）](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-014**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-015**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-016**：[日本証券業協会 個人向け社債の特徴やリスク](https://www.jsda.or.jp/about/hatten/risk/shasai/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-017**：[JPX用語集 割引債](https://www.jpx.co.jp/glossary/wa/479.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-018**：[財務省 個人向け国債の商品概要](https://www.mof.go.jp/jgbs/individual/kojinmuke/main/outline/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-019**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-020**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-021**：[三菱UFJアセットマネジメント 信託報酬はいつ支払うか](https://faq1.am.mufg.jp/answer/660f62c3b2e2fad884e65f2f/)、[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-022**：[日本証券業協会 投資信託の分配金の特徴と留意点](https://www.jsda.or.jp/about/hatten/risk/bunpai/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-023**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-024**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-025**：[金融庁 NISAを知る](https://www.fsa.go.jp/policy/nisa2/know/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-001**：[国税庁 No.1100 所得控除のあらまし](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1100.htm)、[国税庁 No.1200 税額控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1200.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-002**：[国税庁 税金の分類](https://www.nta.go.jp/about/organization/kumamoto/education/kyozai_chugaku/oita/02-02zei-bunrui.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-003**：[国税庁 No.1000 所得税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1000.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-004**：[国税庁 No.1400 給与所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1400.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-005**：[国税庁 No.1400 給与所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1400.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-006**：[国税庁 No.1310 利息を受け取ったとき（利子所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1310.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-007**：[国税庁 No.1330 配当金を受け取ったとき（配当所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1330.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-008**：[国税庁 No.1350 事業所得の課税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1350.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-009**：[国税庁 No.1370 不動産収入を受け取ったとき（不動産所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1370.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-010**：[国税庁 No.1490 一時所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-011**：[国税庁 No.1500 雑所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1500.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-012**：[国税庁 No.2100 減価償却のあらまし](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2100.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-013**：[国税庁 No.1120 医療費を支払ったとき（医療費控除）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-014**：[国税庁 No.1120 医療費を支払ったとき（医療費控除）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-015**：[国税庁 No.1130 社会保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1130.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-016**：[国税庁 No.1135 小規模企業共済等掛金控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-017**：[国税庁 No.1145 地震保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1145.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-018**：[国税庁 No.1191 配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1191.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-019**：[国税庁 No.1180 扶養控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-020**：[国税庁 No.1500 雑所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1500.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-021**：[国税庁 No.2070 青色申告制度](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2070.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-022**：[国税庁 No.1900 給与所得者で確定申告が必要な人](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1900.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-023**：[国税庁 法人税のあらまし（所得の金額の計算）](https://www.nta.go.jp/publication/pamph/hojin/aramashi2024/pdf/01-02.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-024**：[国税庁 No.6201 非課税となる取引](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6201.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-025**：[国税庁 No.6226 住宅の貸付け](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6226.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-001**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-002**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-003**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-004**：[国土交通省 不動産取引の制度資料](https://www.mlit.go.jp/totikensangyo/const/content/001618310.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-005**：[国土交通省 地価公示](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000444.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-006**：[国土交通省 地価公示制度の概要・鑑定の3手法](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000161.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-007**：[国土交通省 地価公示制度の概要・鑑定の3手法](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000161.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-008**：[国土交通省 標準媒介契約約款・契約成立前の説明](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-009**：[国土交通省 標準媒介契約約款（2024年4月改正版）](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-010**：[国土交通省 標準媒介契約約款（2024年4月改正版）](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-011**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-012**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-013**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-014**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-015**：[横浜市 建築基準法上の道路・2項道路](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/tetsuduki/doro/doro.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-016**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-017**：[国土交通省 都市計画制度](https://www.mlit.go.jp/crd/city/plan/03_mati/03/index.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-018**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-019**：[国土交通省 定期借家制度・普通借家との比較](https://www.mlit.go.jp/common/001170116.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-020**：[国土交通省 定期借家制度・普通借家との比較](https://www.mlit.go.jp/common/001170116.pdf)、[国土交通省 定期借家制度](https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000059.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-021**：[国土交通省 定期借地権](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-022**：[国土交通省 定期借地権](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-023**：[国土交通省 不動産投資の利回り・費用の整理](https://www.mlit.go.jp/tochimizushigen/tocchi/bessi1.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-024**：[横浜市 固定資産税・都市計画税の概要](https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/zeikin/y-shizei/koteishisan-toshikeikakuzei/koteishisan-toshikeikakuzei-shosai/kotei.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-025**：[国税庁 No.3208 長期譲渡所得の税額の計算](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3208.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-001**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-002**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-003**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-004**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-005**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-006**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-007**：[国土交通省北海道開発局 権利者探索・相続制度](https://www.hkd.mlit.go.jp/ky/ki/youti/splaat000001jcgm-att/splaat000001w5mn.pdf)、[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-008**：[裁判所 相続の放棄の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_13/index.html)、[裁判所 相続の承認又は放棄の期間の伸長](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_25/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-009**：[裁判所 相続の限定承認の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_14/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-010**：[裁判所 相続の放棄の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_13/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-011**：[法務省 相続登記・遺産分割の説明](https://www.moj.go.jp/MINJI/minji05_00435)、[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-012**：[法務省 自筆証書遺言の方式緩和](https://www.moj.go.jp/MINJI/03.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-013**：[法務省 自筆証書遺言の方式緩和](https://www.moj.go.jp/MINJI/03.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-014**：[裁判所 遺言書の検認](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_17/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-015**：[裁判所 遺言書の検認](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_17/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-016**：[法務省 遺言・遺留分の解説](https://www.moj.go.jp/MINJI/common_igonsyo/pdf/bone_marrow_bank.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-017**：[国税庁 No.4102 相続税がかかる場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4102.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-018**：[国税庁 No.4114 相続税の課税対象になる死亡保険金](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4114.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-019**：[国税庁 No.4205 相続税の申告と納税](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4205.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-020**：[国税庁 No.4405 贈与税がかからない場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4405.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-021**：[国税庁 No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-022**：[国税庁 No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-023**：[国税庁 No.4103 相続時精算課税の選択](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-024**：[国税庁 No.4103 相続時精算課税の選択](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-025**：[国税庁 No.4602 土地家屋の評価](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4602.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-026**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-027**：[住宅金融支援機構 フラット35](https://www.flat35.com/loan/lineup/flat35/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-028**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-029**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-030**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-031**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-032**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-033**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-034**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-035**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-036**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-037**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-038**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-039**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-040**：[日本年金機構 老齢基礎年金の受給要件・支給開始時期・年金額](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/jukyu-yoken/20150401-01.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-041**：[日本年金機構 老齢基礎年金の受給要件・支給開始時期・年金額](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/jukyu-yoken/20150401-01.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-042**：[日本年金機構 付加保険料の納付](https://www.nenkin.go.jp/service/kokunen/hokenryo/fukanofu.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-043**：[国税庁 No.1135 小規模企業共済等掛金控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm)、[iDeCo公式サイト iDeCoの特徴](https://www.ideco-koushiki.jp/guide/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-044**：[iDeCo公式サイト iDeCoの特徴](https://www.ideco-koushiki.jp/guide/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-045**：[住宅金融支援機構 返済方法の比較](https://www.jhf.go.jp/files/topics/6257_ext_99_0.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-046**：[住宅金融支援機構 フラット35・繰上返済](https://www.flat35.com/user/kuriage_hensai.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-047**：[住宅金融支援機構 フラット35・繰上返済](https://www.flat35.com/user/kuriage_hensai.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-048**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-049**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-life-050**：[日本年金機構 付加保険料の納付](https://www.nenkin.go.jp/service/kokunen/hokenryo/fukanofu.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-026**：[生命保険文化センター 定期保険](https://www.jili.or.jp/knows_learns/kind/main/41.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-027**：[日本損害保険協会 火災保険（契約金額の設定方法）](https://www.sonpo.or.jp/insurance/kasai/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-028**：[生命保険文化センター 終身保険](https://www.jili.or.jp/knows_learns/kind/main/37.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-029**：[生命保険文化センター 生命保険の種類（養老・終身・介護・特約）](https://www.jili.or.jp/files/consul/consultation_manual_2.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-030**：[生命保険文化センター 個人年金保険](https://www.jili.or.jp/knows_learns/kind/main/30.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-031**：[生命保険文化センター 契約者貸付](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-032**：[生命保険文化センター 生命保険相談マニュアル・第5章](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-033**：[生命保険文化センター 契約者貸付](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-034**：[生命保険文化センター 生命保険の契約にあたっての手引（必要保障額）](https://jili.or.jp/tebiki/chapter1.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-035**：[日本損害保険協会 免責と免責金額](https://soudanguide.sonpo.or.jp/basic/5_1_q4.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-036**：[日本損害保険協会 リスクへの対策（回避・低減・保有・移転）](https://www.sonpo.or.jp/news/release/2024/pdf/20240722_01.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-037**：[日本損害保険協会 リスクへの対策（回避・低減・保有・移転）](https://www.sonpo.or.jp/news/release/2024/pdf/20240722_01.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-038**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-039**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-040**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-041**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-042**：[日本損害保険協会 自賠責保険](https://www.sonpo.or.jp/insurance/jibai/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-043**：[日本損害保険協会 自動車保険](https://www.sonpo.or.jp/insurance/car/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-044**：[日本損害保険協会 損害保険Q&A・傷害保険](https://soudanguide.sonpo.or.jp/body/q071.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-045**：[国税庁 No.1750 死亡保険金を受け取ったとき](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1750.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-046**：[国税庁 身体の傷害に基因する保険給付の課税](https://www.nta.go.jp/about/organization/tokyo/bunshokaito/shotoku/130313/01.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-047**：[日本損害保険協会 火災保険](https://www.sonpo.or.jp/insurance/kasai/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-048**：[生命保険文化センター 医療保険](https://www.jili.or.jp/knows_learns/kind/main/35.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-049**：[生命保険文化センター 医療保険](https://www.jili.or.jp/knows_learns/kind/main/35.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-risk-050**：[生命保険文化センター 収入保障保険](https://www.jili.or.jp/knows_learns/kind/main/40.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-026**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-027**：[GPIF 投資のリスクとは](https://www.gpif.go.jp/gpif/diversification2.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-028**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-029**：[総務省統計局 消費者物価指数](https://www.stat.go.jp/data/cpi/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-030**：[総務省統計局 統計FAQ・国内総生産](https://www.stat.go.jp/library/faq/faq03/faq03a01.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-031**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-032**：[金融庁 預金保険制度](https://www.fsa.go.jp/policy/payoff/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-033**：[金融庁 決済用預金の3要件](https://www.fsa.go.jp/policy/payoff/01.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-034**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-035**：[金融庁 資産形成の基本（株式）](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-036**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-037**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-038**：[日本証券業協会 個人向け社債の特徴やリスク](https://www.jsda.or.jp/about/hatten/risk/shasai/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-039**：[JPX用語集 割引債](https://www.jpx.co.jp/glossary/wa/479.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-040**：[財務省 個人向け国債の商品概要](https://www.mof.go.jp/jgbs/individual/kojinmuke/main/outline/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-041**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-042**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-043**：[三菱UFJアセットマネジメント 信託報酬はいつ支払うか](https://faq1.am.mufg.jp/answer/660f62c3b2e2fad884e65f2f/)、[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-044**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-045**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-046**：[金融庁 NISAを知る](https://www.fsa.go.jp/policy/nisa2/know/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-047**：[金融庁 NISAを知る](https://www.fsa.go.jp/policy/nisa2/know/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-048**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-049**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-finance-050**：[日本取引所グループ 株式利回り（配当利回り）](https://www.jpx.co.jp/glossary/ka/85.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-026**：[国税庁 No.1100 所得控除のあらまし](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1100.htm)、[国税庁 No.1200 税額控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1200.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-027**：[国税庁 税金の分類](https://www.nta.go.jp/about/organization/kumamoto/education/kyozai_chugaku/oita/02-02zei-bunrui.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-028**：[国税庁 No.1000 所得税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1000.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-029**：[国税庁 No.1400 給与所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1400.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-030**：[国税庁 No.1400 給与所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1400.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-031**：[国税庁 No.1310 利息を受け取ったとき（利子所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1310.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-032**：[国税庁 No.1330 配当金を受け取ったとき（配当所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1330.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-033**：[国税庁 No.1350 事業所得の課税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1350.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-034**：[国税庁 No.1370 不動産収入を受け取ったとき（不動産所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1370.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-035**：[国税庁 No.1490 一時所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-036**：[国税庁 No.1500 雑所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1500.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-037**：[国税庁 No.1120 医療費を支払ったとき（医療費控除）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-038**：[国税庁 No.1130 社会保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1130.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-039**：[国税庁 No.1135 小規模企業共済等掛金控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-040**：[国税庁 No.1145 地震保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1145.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-041**：[国税庁 No.1180 扶養控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-042**：[国税庁 No.1500 雑所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1500.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-043**：[国税庁 No.2070 青色申告制度](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2070.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-044**：[国税庁 No.1900 給与所得者で確定申告が必要な人](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1900.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-045**：[国税庁 No.6201 非課税となる取引](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6201.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-046**：[国税庁 No.6226 住宅の貸付け](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6226.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-047**：[国税庁 No.1350 事業所得の課税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1350.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-048**：[国税庁 No.1370 不動産収入を受け取ったとき（不動産所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1370.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-049**：[国税庁 No.1120 医療費を支払ったとき（医療費控除）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-tax-050**：[国税庁 No.1130 社会保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1130.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-026**：[法務省 不動産登記のABC](https://www.moj.go.jp/MINJI/minji02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-027**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-028**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-029**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-030**：[国土交通省 地価公示](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000444.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-031**：[国土交通省 地価公示制度の概要・鑑定の3手法](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000161.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-032**：[国土交通省 地価公示制度の概要・鑑定の3手法](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000161.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-033**：[国土交通省 標準媒介契約約款・契約成立前の説明](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-034**：[国土交通省 標準媒介契約約款（2024年4月改正版）](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-035**：[国土交通省 標準媒介契約約款（2024年4月改正版）](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-036**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-037**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-038**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-039**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-040**：[国土交通省 都市計画制度](https://www.mlit.go.jp/crd/city/plan/03_mati/03/index.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-041**：[国土交通省 定期借家制度・普通借家との比較](https://www.mlit.go.jp/common/001170116.pdf)、[国土交通省 定期借家制度](https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000059.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-042**：[国土交通省 定期借地権](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-043**：[国土交通省 定期借地権](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-044**：[国土交通省 不動産投資の利回り・費用の整理](https://www.mlit.go.jp/tochimizushigen/tocchi/bessi1.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-045**：[横浜市 固定資産税・都市計画税の概要](https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/zeikin/y-shizei/koteishisan-toshikeikakuzei/koteishisan-toshikeikakuzei-shosai/kotei.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-046**：[横浜市 土地に対する課税の特例](https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/zeikin/y-shizei/koteishisan-toshikeikakuzei/koteishisan-toshikeikakuzei-shosai/tochitokurei.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-047**：[国税庁 No.3302 マイホームを売ったときの特例](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-048**：[国税庁 No.3258 取得費が分からないとき](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3258.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-049**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-estate-050**：[国土交通省 不動産投資の利回り・費用の整理](https://www.mlit.go.jp/tochimizushigen/tocchi/bessi1.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-026**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-027**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-028**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-029**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-030**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-031**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-032**：[裁判所 相続の放棄の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_13/index.html)、[裁判所 相続の承認又は放棄の期間の伸長](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_25/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-033**：[裁判所 相続の放棄の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_13/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-034**：[法務省 相続登記・遺産分割の説明](https://www.moj.go.jp/MINJI/minji05_00435)、[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-035**：[法務省 自筆証書遺言の方式緩和](https://www.moj.go.jp/MINJI/03.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-036**：[裁判所 遺言書の検認](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_17/index.html)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-037**：[法務省 遺言・遺留分の解説](https://www.moj.go.jp/MINJI/common_igonsyo/pdf/bone_marrow_bank.pdf)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-038**：[国税庁 No.4102 相続税がかかる場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4102.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-039**：[国税庁 No.4114 相続税の課税対象になる死亡保険金](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4114.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-040**：[国税庁 No.4129 相続財産から控除できる葬式費用](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4129.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-041**：[国税庁 No.4124 小規模宅地等の特例](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4124.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-042**：[国税庁 No.4205 相続税の申告と納税](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4205.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-043**：[国税庁 No.4405 贈与税がかからない場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4405.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-044**：[国税庁 No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-045**：[国税庁 No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-046**：[国税庁 No.4103 相続時精算課税の選択](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-047**：[国税庁 No.4103 相続時精算課税の選択](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-048**：[国税庁 No.4602 土地家屋の評価](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4602.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-049**：[国税庁 No.4102 相続税がかかる場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4102.htm)（法令基準日2026-04-01／確認日2026-10-11）
-- **fp3-inheritance-050**：[国税庁 No.4402 贈与税がかかる場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4402.htm)（法令基準日2026-04-01／確認日2026-10-11）
+- **fp3-life-001**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-002**：[住宅金融支援機構 フラット35](https://www.flat35.com/loan/lineup/flat35/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-003**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-004**：[国税庁 No.9204 税理士・税理士法人でない者が行う税理士業務](https://www.nta.go.jp/taxes/shiraberu/taxanswer/osirase/9204.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-005**：[日本FP協会 FP相談Q&A（会員倫理規程・守秘義務）](https://www.jafp.or.jp/confer/fpsoudan/qa/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-006**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-007**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-008**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-009**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-010**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-011**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-012**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-013**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-014**：[協会けんぽ 出産手当金](https://www.kyoukaikenpo.or.jp/benefit/childbirth/001/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-015**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-016**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-017**：[日本年金機構 老齢基礎年金の受給要件・支給開始時期・年金額](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/jukyu-yoken/20150401-01.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-018**：[日本年金機構 老齢基礎年金の受給要件・支給開始時期・年金額](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/jukyu-yoken/20150401-01.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-019**：[日本年金機構 年金の繰上げ受給](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/kuriage-kurisage/20140421-01.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-020**：[日本年金機構 国民年金保険料の学生納付特例制度](https://www.nenkin.go.jp/service/kokunen/menjo/20150514.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-021**：[日本年金機構 保険料の追納について](https://www.nenkin.go.jp/section/faq/kokunen/seido/hokenryo/tsuino/20200820.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-022**：[日本年金機構 付加保険料の納付](https://www.nenkin.go.jp/service/kokunen/hokenryo/fukanofu.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-023**：[iDeCo公式サイト iDeCoの特徴](https://www.ideco-koushiki.jp/guide/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-024**：[国税庁 No.1135 小規模企業共済等掛金控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm)、[iDeCo公式サイト iDeCoの特徴](https://www.ideco-koushiki.jp/guide/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-025**：[住宅金融支援機構 フラット35・繰上返済](https://www.flat35.com/user/kuriage_hensai.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-001**：[生命保険文化センター 定期保険](https://www.jili.or.jp/knows_learns/kind/main/41.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-002**：[生命保険文化センター 終身保険](https://www.jili.or.jp/knows_learns/kind/main/37.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-003**：[生命保険文化センター 生命保険の種類（養老・終身・介護・特約）](https://www.jili.or.jp/files/consul/consultation_manual_2.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-004**：[生命保険文化センター 収入保障保険](https://www.jili.or.jp/knows_learns/kind/main/40.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-005**：[生命保険文化センター 変額保険](https://www.jili.or.jp/knows_learns/kind/main/29.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-006**：[生命保険文化センター 個人年金保険](https://www.jili.or.jp/knows_learns/kind/main/30.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-007**：[生命保険文化センター 定期保険](https://www.jili.or.jp/knows_learns/kind/main/41.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-008**：[生命保険文化センター 契約者貸付](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-009**：[金融庁 生命保険について（告知義務）](https://www.fsa.go.jp/receipt/soudansitu/advice02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-010**：[生命保険文化センター 生命保険相談マニュアル・第5章](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-011**：[生命保険文化センター 生命保険相談マニュアル・第5章](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-012**：[生命保険文化センター 契約者貸付](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-013**：[金融庁 保険契約に際しての手引](https://www.fsa.go.jp/ordinary/hokenkeiyaku/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-014**：[生命保険文化センター 生命保険の契約にあたっての手引（必要保障額）](https://jili.or.jp/tebiki/chapter1.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-015**：[日本損害保険協会 免責と免責金額](https://soudanguide.sonpo.or.jp/basic/5_1_q4.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-016**：[日本損害保険協会 リスクへの対策（回避・低減・保有・移転）](https://www.sonpo.or.jp/news/release/2024/pdf/20240722_01.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-017**：[日本損害保険協会 リスクへの対策（回避・低減・保有・移転）](https://www.sonpo.or.jp/news/release/2024/pdf/20240722_01.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-018**：[生命保険文化センター 医療保険](https://www.jili.or.jp/knows_learns/kind/main/35.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-019**：[生命保険文化センター がん保険](https://www.jili.or.jp/knows_learns/kind/main/34.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-020**：[国税庁 リビング・ニーズ特約に基づく生前給付金](https://www.nta.go.jp/law/shitsugi/shotoku/01/03.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-021**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-022**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-023**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-024**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-025**：[日本損害保険協会 自賠責保険](https://www.sonpo.or.jp/insurance/jibai/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-001**：[金融庁 資産形成の基本（分散投資）](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-002**：[日本証券業協会 個人向け社債の特徴やリスク、価格情報の入手方法](https://www.jsda.or.jp/about/hatten/risk/shasai/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-003**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-004**：[GPIF 投資のリスクとは](https://www.gpif.go.jp/gpif/diversification2.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-005**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-006**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-007**：[総務省統計局 消費者物価指数](https://www.stat.go.jp/data/cpi/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-008**：[総務省統計局 統計FAQ・国内総生産](https://www.stat.go.jp/library/faq/faq03/faq03a01.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-009**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-010**：[金融庁 預金保険制度](https://www.fsa.go.jp/policy/payoff/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-011**：[金融庁 決済用預金の3要件](https://www.fsa.go.jp/policy/payoff/01.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-012**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-013**：[金融庁 資産形成の基本（株式）](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-014**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-015**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-016**：[日本証券業協会 個人向け社債の特徴やリスク](https://www.jsda.or.jp/about/hatten/risk/shasai/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-017**：[JPX用語集 割引債](https://www.jpx.co.jp/glossary/wa/479.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-018**：[財務省 個人向け国債の商品概要](https://www.mof.go.jp/jgbs/individual/kojinmuke/main/outline/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-019**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-020**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-021**：[三菱UFJアセットマネジメント 信託報酬はいつ支払うか](https://faq1.am.mufg.jp/answer/660f62c3b2e2fad884e65f2f/)、[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-022**：[日本証券業協会 投資信託の分配金の特徴と留意点](https://www.jsda.or.jp/about/hatten/risk/bunpai/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-023**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-024**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-025**：[金融庁 NISAを知る](https://www.fsa.go.jp/policy/nisa2/know/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-001**：[国税庁 No.1100 所得控除のあらまし](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1100.htm)、[国税庁 No.1200 税額控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1200.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-002**：[国税庁 税金の分類](https://www.nta.go.jp/about/organization/kumamoto/education/kyozai_chugaku/oita/02-02zei-bunrui.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-003**：[国税庁 No.1000 所得税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1000.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-004**：[国税庁 No.1400 給与所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1400.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-005**：[国税庁 No.1400 給与所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1400.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-006**：[国税庁 No.1310 利息を受け取ったとき（利子所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1310.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-007**：[国税庁 No.1330 配当金を受け取ったとき（配当所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1330.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-008**：[国税庁 No.1350 事業所得の課税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1350.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-009**：[国税庁 No.1370 不動産収入を受け取ったとき（不動産所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1370.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-010**：[国税庁 No.1490 一時所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-011**：[国税庁 No.1500 雑所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1500.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-012**：[国税庁 No.2100 減価償却のあらまし](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2100.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-013**：[国税庁 No.1120 医療費を支払ったとき（医療費控除）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-014**：[国税庁 No.1120 医療費を支払ったとき（医療費控除）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-015**：[国税庁 No.1130 社会保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1130.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-016**：[国税庁 No.1135 小規模企業共済等掛金控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-017**：[国税庁 No.1145 地震保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1145.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-018**：[国税庁 No.1191 配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1191.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-019**：[国税庁 No.1180 扶養控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-020**：[国税庁 No.1500 雑所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1500.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-021**：[国税庁 No.2070 青色申告制度](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2070.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-022**：[国税庁 No.1900 給与所得者で確定申告が必要な人](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1900.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-023**：[国税庁 法人税のあらまし（所得の金額の計算）](https://www.nta.go.jp/publication/pamph/hojin/aramashi2024/pdf/01-02.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-024**：[国税庁 No.6201 非課税となる取引](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6201.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-025**：[国税庁 No.6226 住宅の貸付け](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6226.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-001**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-002**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-003**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-004**：[国土交通省 不動産取引の制度資料](https://www.mlit.go.jp/totikensangyo/const/content/001618310.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-005**：[国土交通省 地価公示](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000444.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-006**：[国土交通省 地価公示制度の概要・鑑定の3手法](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000161.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-007**：[国土交通省 地価公示制度の概要・鑑定の3手法](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000161.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-008**：[国土交通省 標準媒介契約約款・契約成立前の説明](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-009**：[国土交通省 標準媒介契約約款（2024年4月改正版）](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-010**：[国土交通省 標準媒介契約約款（2024年4月改正版）](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-011**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-012**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-013**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-014**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-015**：[横浜市 建築基準法上の道路・2項道路](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/tetsuduki/doro/doro.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-016**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-017**：[国土交通省 都市計画制度](https://www.mlit.go.jp/crd/city/plan/03_mati/03/index.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-018**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-019**：[国土交通省 定期借家制度・普通借家との比較](https://www.mlit.go.jp/common/001170116.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-020**：[国土交通省 定期借家制度・普通借家との比較](https://www.mlit.go.jp/common/001170116.pdf)、[国土交通省 定期借家制度](https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000059.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-021**：[国土交通省 定期借地権](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-022**：[国土交通省 定期借地権](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-023**：[国土交通省 不動産投資の利回り・費用の整理](https://www.mlit.go.jp/tochimizushigen/tocchi/bessi1.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-024**：[横浜市 固定資産税・都市計画税の概要](https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/zeikin/y-shizei/koteishisan-toshikeikakuzei/koteishisan-toshikeikakuzei-shosai/kotei.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-025**：[国税庁 No.3208 長期譲渡所得の税額の計算](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3208.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-001**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-002**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-003**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-004**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-005**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-006**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-007**：[国土交通省北海道開発局 権利者探索・相続制度](https://www.hkd.mlit.go.jp/ky/ki/youti/splaat000001jcgm-att/splaat000001w5mn.pdf)、[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-008**：[裁判所 相続の放棄の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_13/index.html)、[裁判所 相続の承認又は放棄の期間の伸長](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_25/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-009**：[裁判所 相続の限定承認の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_14/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-010**：[裁判所 相続の放棄の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_13/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-011**：[法務省 相続登記・遺産分割の説明](https://www.moj.go.jp/MINJI/minji05_00435)、[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-012**：[法務省 自筆証書遺言の方式緩和](https://www.moj.go.jp/MINJI/03.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-013**：[法務省 自筆証書遺言の方式緩和](https://www.moj.go.jp/MINJI/03.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-014**：[裁判所 遺言書の検認](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_17/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-015**：[裁判所 遺言書の検認](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_17/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-016**：[法務省 遺言・遺留分の解説](https://www.moj.go.jp/MINJI/common_igonsyo/pdf/bone_marrow_bank.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-017**：[国税庁 No.4102 相続税がかかる場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4102.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-018**：[国税庁 No.4114 相続税の課税対象になる死亡保険金](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4114.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-019**：[国税庁 No.4205 相続税の申告と納税](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4205.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-020**：[国税庁 No.4405 贈与税がかからない場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4405.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-021**：[国税庁 No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-022**：[国税庁 No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-023**：[国税庁 No.4103 相続時精算課税の選択](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-024**：[国税庁 No.4103 相続時精算課税の選択](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-025**：[国税庁 No.4602 土地家屋の評価](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4602.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-026**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-027**：[住宅金融支援機構 フラット35](https://www.flat35.com/loan/lineup/flat35/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-028**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-029**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-030**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-031**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-032**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-033**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-034**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-035**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-036**：[日本FP協会 2026年5月2級学科試験・問1（6係数）](https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-037**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-038**：[協会けんぽ 傷病手当金](https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-039**：[厚生労働省 公的年金制度の概要](https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-040**：[日本年金機構 老齢基礎年金の受給要件・支給開始時期・年金額](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/jukyu-yoken/20150401-01.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-041**：[日本年金機構 老齢基礎年金の受給要件・支給開始時期・年金額](https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/jukyu-yoken/20150401-01.html)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-life-042**：[日本年金機構 付加保険料の納付](https://www.nenkin.go.jp/service/kokunen/hokenryo/fukanofu.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-043**：[国税庁 No.1135 小規模企業共済等掛金控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm)、[iDeCo公式サイト iDeCoの特徴](https://www.ideco-koushiki.jp/guide/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-044**：[iDeCo公式サイト iDeCoの特徴](https://www.ideco-koushiki.jp/guide/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-045**：[住宅金融支援機構 返済方法の比較](https://www.jhf.go.jp/files/topics/6257_ext_99_0.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-046**：[住宅金融支援機構 フラット35・繰上返済](https://www.flat35.com/user/kuriage_hensai.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-047**：[住宅金融支援機構 フラット35・繰上返済](https://www.flat35.com/user/kuriage_hensai.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-life-048**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-life-049**：[日本FP協会 パーソナルファイナンス教育スタンダード](https://www.jafp.or.jp/personal_finance/about/standard/files/personal_finance_standard.pdf)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-life-050**：[日本年金機構 付加保険料の納付](https://www.nenkin.go.jp/service/kokunen/hokenryo/fukanofu.html)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-risk-026**：[生命保険文化センター 定期保険](https://www.jili.or.jp/knows_learns/kind/main/41.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-027**：[日本損害保険協会 火災保険（契約金額の設定方法）](https://www.sonpo.or.jp/insurance/kasai/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-028**：[生命保険文化センター 終身保険](https://www.jili.or.jp/knows_learns/kind/main/37.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-029**：[生命保険文化センター 生命保険の種類（養老・終身・介護・特約）](https://www.jili.or.jp/files/consul/consultation_manual_2.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-030**：[生命保険文化センター 個人年金保険](https://www.jili.or.jp/knows_learns/kind/main/30.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-031**：[生命保険文化センター 契約者貸付](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-032**：[生命保険文化センター 生命保険相談マニュアル・第5章](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-033**：[生命保険文化センター 契約者貸付](https://www.jili.or.jp/files/consul/consultation_manual_all.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-034**：[生命保険文化センター 生命保険の契約にあたっての手引（必要保障額）](https://jili.or.jp/tebiki/chapter1.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-035**：[日本損害保険協会 免責と免責金額](https://soudanguide.sonpo.or.jp/basic/5_1_q4.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-036**：[日本損害保険協会 リスクへの対策（回避・低減・保有・移転）](https://www.sonpo.or.jp/news/release/2024/pdf/20240722_01.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-037**：[日本損害保険協会 リスクへの対策（回避・低減・保有・移転）](https://www.sonpo.or.jp/news/release/2024/pdf/20240722_01.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-038**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-039**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-040**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-041**：[日本損害保険協会 地震保険](https://www.sonpo.or.jp/insurance/jishin/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-042**：[日本損害保険協会 自賠責保険](https://www.sonpo.or.jp/insurance/jibai/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-043**：[日本損害保険協会 自動車保険](https://www.sonpo.or.jp/insurance/car/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-044**：[日本損害保険協会 損害保険Q&A・傷害保険](https://soudanguide.sonpo.or.jp/body/q071.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-045**：[国税庁 No.1750 死亡保険金を受け取ったとき](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1750.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-046**：[国税庁 身体の傷害に基因する保険給付の課税](https://www.nta.go.jp/about/organization/tokyo/bunshokaito/shotoku/130313/01.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-risk-047**：[日本損害保険協会 火災保険](https://www.sonpo.or.jp/insurance/kasai/)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-risk-048**：[生命保険文化センター 医療保険](https://www.jili.or.jp/knows_learns/kind/main/35.html)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-risk-049**：[生命保険文化センター 医療保険](https://www.jili.or.jp/knows_learns/kind/main/35.html)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-risk-050**：[生命保険文化センター 収入保障保険](https://www.jili.or.jp/knows_learns/kind/main/40.html)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-finance-026**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-027**：[GPIF 投資のリスクとは](https://www.gpif.go.jp/gpif/diversification2.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-028**：[金融庁 資産形成の基本](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-029**：[総務省統計局 消費者物価指数](https://www.stat.go.jp/data/cpi/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-030**：[総務省統計局 統計FAQ・国内総生産](https://www.stat.go.jp/library/faq/faq03/faq03a01.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-031**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-032**：[金融庁 預金保険制度](https://www.fsa.go.jp/policy/payoff/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-033**：[金融庁 決済用預金の3要件](https://www.fsa.go.jp/policy/payoff/01.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-034**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-035**：[金融庁 資産形成の基本（株式）](https://www.fsa.go.jp/policy/nisa2/invest/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-036**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-037**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-038**：[日本証券業協会 個人向け社債の特徴やリスク](https://www.jsda.or.jp/about/hatten/risk/shasai/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-039**：[JPX用語集 割引債](https://www.jpx.co.jp/glossary/wa/479.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-040**：[財務省 個人向け国債の商品概要](https://www.mof.go.jp/jgbs/individual/kojinmuke/main/outline/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-041**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-042**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-043**：[三菱UFJアセットマネジメント 信託報酬はいつ支払うか](https://faq1.am.mufg.jp/answer/660f62c3b2e2fad884e65f2f/)、[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-044**：[資産運用業協会 投資信託の基礎知識](https://www.imaj.or.jp/special/toushin-qa100/basic/)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-045**：[北海道銀行 はじめての外貨預金](https://www.hokkaidobank.co.jp/save/foreign/first_time.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-046**：[金融庁 NISAを知る](https://www.fsa.go.jp/policy/nisa2/know/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-047**：[金融庁 NISAを知る](https://www.fsa.go.jp/policy/nisa2/know/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-finance-048**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-finance-049**：[日本取引所グループ 株式投資の指標](https://port.jpx.co.jp/jpxhp/portdocs/beginner_a_02.html)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-finance-050**：[日本取引所グループ 株式利回り（配当利回り）](https://www.jpx.co.jp/glossary/ka/85.html)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-tax-026**：[国税庁 No.1100 所得控除のあらまし](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1100.htm)、[国税庁 No.1200 税額控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1200.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-027**：[国税庁 税金の分類](https://www.nta.go.jp/about/organization/kumamoto/education/kyozai_chugaku/oita/02-02zei-bunrui.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-028**：[国税庁 No.1000 所得税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1000.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-029**：[国税庁 No.1400 給与所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1400.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-030**：[国税庁 No.1400 給与所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1400.htm)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-tax-031**：[国税庁 No.1310 利息を受け取ったとき（利子所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1310.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-032**：[国税庁 No.1330 配当金を受け取ったとき（配当所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1330.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-033**：[国税庁 No.1350 事業所得の課税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1350.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-034**：[国税庁 No.1370 不動産収入を受け取ったとき（不動産所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1370.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-035**：[国税庁 No.1490 一時所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-036**：[国税庁 No.1500 雑所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1500.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-037**：[国税庁 No.1120 医療費を支払ったとき（医療費控除）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-tax-038**：[国税庁 No.1130 社会保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1130.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-039**：[国税庁 No.1135 小規模企業共済等掛金控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1135.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-040**：[国税庁 No.1145 地震保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1145.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-041**：[国税庁 No.1180 扶養控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1180.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-042**：[国税庁 No.1500 雑所得](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1500.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-043**：[国税庁 No.2070 青色申告制度](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2070.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-044**：[国税庁 No.1900 給与所得者で確定申告が必要な人](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1900.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-045**：[国税庁 No.6201 非課税となる取引](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6201.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-046**：[国税庁 No.6226 住宅の貸付け](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6226.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-tax-047**：[国税庁 No.1350 事業所得の課税のしくみ](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1350.htm)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-tax-048**：[国税庁 No.1370 不動産収入を受け取ったとき（不動産所得）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1370.htm)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-tax-049**：[国税庁 No.1120 医療費を支払ったとき（医療費控除）](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-tax-050**：[国税庁 No.1130 社会保険料控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1130.htm)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-estate-026**：[法務省 不動産登記のABC](https://www.moj.go.jp/MINJI/minji02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-027**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-028**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-029**：[法務省 不動産登記](https://www.moj.go.jp/MINJI/minji02.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-030**：[国土交通省 地価公示](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000444.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-031**：[国土交通省 地価公示制度の概要・鑑定の3手法](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000161.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-032**：[国土交通省 地価公示制度の概要・鑑定の3手法](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000161.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-033**：[国土交通省 標準媒介契約約款・契約成立前の説明](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-034**：[国土交通省 標準媒介契約約款（2024年4月改正版）](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-035**：[国土交通省 標準媒介契約約款（2024年4月改正版）](https://www.mlit.go.jp/totikensangyo/const/content/001723420.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-036**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-037**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-038**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-039**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-040**：[国土交通省 都市計画制度](https://www.mlit.go.jp/crd/city/plan/03_mati/03/index.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-041**：[国土交通省 定期借家制度・普通借家との比較](https://www.mlit.go.jp/common/001170116.pdf)、[国土交通省 定期借家制度](https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000059.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-042**：[国土交通省 定期借地権](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-043**：[国土交通省 定期借地権](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-044**：[国土交通省 不動産投資の利回り・費用の整理](https://www.mlit.go.jp/tochimizushigen/tocchi/bessi1.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-045**：[横浜市 固定資産税・都市計画税の概要](https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/zeikin/y-shizei/koteishisan-toshikeikakuzei/koteishisan-toshikeikakuzei-shosai/kotei.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-046**：[横浜市 土地に対する課税の特例](https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/zeikin/y-shizei/koteishisan-toshikeikakuzei/koteishisan-toshikeikakuzei-shosai/tochitokurei.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-047**：[国税庁 No.3302 マイホームを売ったときの特例](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-048**：[国税庁 No.3258 取得費が分からないとき](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3258.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-estate-049**：[横浜市 建築基準法の概要（敷地・用途・容積率・建ぺい率・高さ）](https://www.city.yokohama.lg.jp/business/bunyabetsu/kenchiku/annai/20140401121655.files/0139_20250328.pdf)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-estate-050**：[国土交通省 不動産投資の利回り・費用の整理](https://www.mlit.go.jp/tochimizushigen/tocchi/bessi1.htm)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-inheritance-026**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-027**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-028**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-029**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-030**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-031**：[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-032**：[裁判所 相続の放棄の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_13/index.html)、[裁判所 相続の承認又は放棄の期間の伸長](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_25/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-033**：[裁判所 相続の放棄の申述](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_13/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-034**：[法務省 相続登記・遺産分割の説明](https://www.moj.go.jp/MINJI/minji05_00435)、[国税庁 No.4132 相続人の範囲と法定相続分](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4132.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-035**：[法務省 自筆証書遺言の方式緩和](https://www.moj.go.jp/MINJI/03.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-036**：[裁判所 遺言書の検認](https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_06_17/index.html)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-037**：[法務省 遺言・遺留分の解説](https://www.moj.go.jp/MINJI/common_igonsyo/pdf/bone_marrow_bank.pdf)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-inheritance-038**：[国税庁 No.4102 相続税がかかる場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4102.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-039**：[国税庁 No.4114 相続税の課税対象になる死亡保険金](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4114.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-040**：[国税庁 No.4129 相続財産から控除できる葬式費用](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4129.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-041**：[国税庁 No.4124 小規模宅地等の特例](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4124.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-042**：[国税庁 No.4205 相続税の申告と納税](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4205.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-043**：[国税庁 No.4405 贈与税がかからない場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4405.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-044**：[国税庁 No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-045**：[国税庁 No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-046**：[国税庁 No.4103 相続時精算課税の選択](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-047**：[国税庁 No.4103 相続時精算課税の選択](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-048**：[国税庁 No.4602 土地家屋の評価](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4602.htm)（基準日2026-04-01／最終確認日2026-10-11）
+- **fp3-inheritance-049**：[国税庁 No.4102 相続税がかかる場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4102.htm)（基準日2026-04-01／最終確認日2026-10-12）
+- **fp3-inheritance-050**：[国税庁 No.4402 贈与税がかかる場合](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4402.htm)（基準日2026-04-01／最終確認日2026-10-12）
